@@ -50,8 +50,6 @@ void display(Field field) {
 
 
 int main() {
-    //Ship ship = Ship(1, true);
-    //ship.printStatus();
     Ship ship1 = Ship(4, true);
     Ship ship2 = Ship(2, false);
     Ship ship3 = Ship(3, false);
@@ -60,7 +58,6 @@ int main() {
     gamefield.placeShip(&ship2, ship2.getIsVertical(), {1, 1});
     gamefield.placeShip(&ship3, ship3.getIsVertical(), {5, 6});
 
-    //gamefield.setCellValue({3, 5}, CellValue::ShipPart);
     gamefield.handleAttack({1, 1});
     ship2.handleTakenDamage({1, 1});
 
@@ -73,8 +70,6 @@ int main() {
     gamefield.handleAttack({2, 1});
     ship2.handleTakenDamage({2, 1});
 
-    //gamefield.handleAttack({3, 4});
-    //gamefield.handleAttack({4, 4});
     display(gamefield);
 
     return 0;
