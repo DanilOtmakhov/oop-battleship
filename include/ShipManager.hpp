@@ -10,8 +10,11 @@ class ShipManager {
     private:
         std::vector<Ship*> ships;
     public:
-        ShipManager(int number, std::vector<int> lengths = {4, 3, 3, 2, 2, 2, 1, 1, 1, 1});
-
+        ShipManager(int number, std::vector<int> lengths);
+        ShipManager();
+        ~ShipManager();
+        std::vector<Ship*> getShips();
+        void addShip(int length);
 };
 
 #endif

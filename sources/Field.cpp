@@ -119,7 +119,7 @@ CellValue Field::getCellValue(Coordinate coordinate) {
 }
 
 void Field::placeShip(Ship* ship, bool isVertical, Coordinate coordinate) {
-    if (!checkPlaceForShip((*ship).getLength(), (*ship).getIsVertical(), coordinate)) {
+    if (!checkPlaceForShip(ship->getLength(), isVertical, coordinate)) {
         throw std::out_of_range("Unable to place ship at given coordinates!");
     }
 
@@ -135,7 +135,7 @@ void Field::placeShip(Ship* ship, bool isVertical, Coordinate coordinate) {
         } else {
             ship->setSegmentCoordinate(i, {x0 + i, y0});
             setCellValue({x0 + i, y0}, CellValue::ShipPart);
-            field[y0][x0 + 1].ship = ship;
+            field[y0][x0 + i].ship = ship;
         }
     }
 }

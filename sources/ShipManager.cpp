@@ -10,4 +10,18 @@ ShipManager::ShipManager(int number, std::vector<int> lengths) {
     }
 }
 
+ShipManager::ShipManager() : ShipManager(10, {4, 3, 3, 2, 2, 2, 1, 1, 1, 1}) {}
 
+ShipManager::~ShipManager() {
+    for (auto& ship : this->ships) {
+        delete ship;
+    }
+}
+
+std::vector<Ship*> ShipManager::getShips() {
+    return this->ships;
+}
+
+void ShipManager::addShip(int length) {
+    ships.push_back(new Ship(length));
+}

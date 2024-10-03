@@ -4,7 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-#include "Structures.hpp"
+#include "Structs.hpp"
 
 
 class Ship {
@@ -18,6 +18,7 @@ class Ship {
         Ship(int length, bool isVertical = false);
         int getLength();
         bool getIsVertical();
+        void changeOrientaion(bool toVertical = true);
         ShipStatus getStatus();
         void setStatus(ShipStatus newStatus);
         void setSegmentCoordinate(int index, Coordinate coordinate);

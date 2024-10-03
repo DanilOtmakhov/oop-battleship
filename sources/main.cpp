@@ -45,11 +45,12 @@ void display(Field field) {
     std::cout << colors.blue << static_cast<char>(CellValue::Revealed) << colors.white << " - missed attack;" << std::endl;
     std::cout << colors.yellow << static_cast<char>(CellValue::ShipPart) << colors.white << " - untouched segment of the ship;" << std::endl;
     std::cout << colors.red << static_cast<char>(CellValue::Damaged) << colors.white << " - damaged segment of the ship;" << std::endl;
-    std::cout << colors.red << static_cast<char>(CellValue::Destroyed) << colors.white << " - destroyed ship." << colors.reset << std::endl;
+    std::cout << colors.red << static_cast<char>(CellValue::Destroyed) << colors.white << " - destroyed ship segment." << colors.reset << std::endl;
 }
 
 
 int main() {
+    /*
     Ship ship1 = Ship(4, true);
     Ship ship2 = Ship(2, false);
     Ship ship3 = Ship(3, false);
@@ -69,6 +70,29 @@ int main() {
 
     gamefield.handleAttack({2, 1});
     ship2.handleTakenDamage({2, 1});
+    */
+
+    Field gamefield = Field(10, 10);
+    ShipManager manager = ShipManager();
+
+    std::vector<Ship*> ships = manager.getShips();
+
+    gamefield.placeShip(ships[0], true, {7, 0});
+    gamefield.placeShip(ships[1], true, {0, 7});
+    gamefield.placeShip(ships[2], false, {3, 1});
+    gamefield.placeShip(ships[3], false, {3, 4});
+    gamefield.placeShip(ships[4], false, {2, 6});
+    gamefield.placeShip(ships[5], false, {7, 6});
+    gamefield.placeShip(ships[6], false, {8, 9});
+    gamefield.placeShip(ships[7], false, {4, 8});
+    gamefield.placeShip(ships[8], false, {1, 3});
+    gamefield.placeShip(ships[9], false, {0, 0});
+
+    gamefield.handleAttack({7, 0});
+    gamefield.handleAttack({7, 0});
+    gamefield.handleAttack({2, 1});
+    gamefield.handleAttack({5, 5});
+    gamefield.handleAttack({8, 9});
 
     display(gamefield);
 

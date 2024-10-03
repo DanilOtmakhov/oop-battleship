@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include "Ship.hpp"
-#include "Structures.hpp"
+#include "Structs.hpp"
 
 
 class Field {
