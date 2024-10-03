@@ -11,6 +11,33 @@ Field::Field(int rows, int columns) : rows(rows), columns(columns) {
     }
 }
 
+Field::Field(const Field& other) : rows(other.rows), columns(other.columns), field(other.field) {}
+
+Field& Field::operator = (const Field& other) {
+    if (this != &other) {
+        rows = other.rows;
+        columns = other.columns;
+        field = other.field;
+    }
+    return *this;
+}
+
+Field::Field(Field&& other) : rows(other.rows), columns(other.columns), field(std::move(other.field)) {
+    other.rows = 0;
+    other.columns = 0;
+}
+
+Field& Field::operator = (Field&& other) {
+    if (this != &other) {
+        rows = other.rows;
+        columns = other.columns;
+        field = std::move(other.field);
+        other.rows = 0;
+        other.columns = 0;
+    }
+    return *this;
+}
+
 bool Field::isCoordinateCorrect(Coordinate coordinate) {
     return 0 <= coordinate.x && coordinate.x < columns && 0 <= coordinate.y && coordinate.y < rows;
 }

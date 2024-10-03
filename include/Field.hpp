@@ -16,6 +16,10 @@ class Field {
         bool checkPlaceForShip(int ShipLength, bool isVertical, Coordinate coordinate);
     public:
         Field(int rows, int columns);
+        Field(const Field& other);
+        Field& operator = (const Field& other);
+        Field(Field&& other);
+        Field& operator = (Field&& other);
         int getRows();
         int getColumns();
         void setCellStatus(Coordinate coordinate, CellStatus status);
