@@ -28,6 +28,7 @@ class Field {
         CellValue getCellValue(Coordinate coordinate);
         void placeShip(Ship* ship, bool isVertical, Coordinate coordinate);
         void handleAttack(Coordinate coordinate);
+        void handleRandomAttack();
 };
 
 #endif

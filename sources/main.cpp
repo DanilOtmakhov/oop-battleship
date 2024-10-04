@@ -90,7 +90,7 @@ int main() {
     gamefield.placeShip(ships[7], false, {4, 8});
     gamefield.placeShip(ships[8], false, {1, 3});
     gamefield.placeShip(ships[9], false, {0, 0});
-
+    /*
     gamefield.handleAttack({7, 0});
     gamefield.handleAttack({7, 0});
     gamefield.handleAttack({7, 1});
@@ -104,6 +104,14 @@ int main() {
     gamefield.handleAttack({5, 5});
     gamefield.handleAttack({8, 9});
     gamefield.handleAttack({8, 9});
+    */
+
+
+    //display(gamefield);
+
+    for (int i = 0; i < 100; i++) {
+        gamefield.handleRandomAttack();
+    }
 
     display(gamefield);
 

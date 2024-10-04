@@ -168,3 +168,10 @@ void Field::handleAttack(Coordinate coordinate) {
             break;
     }
 }
+
+void Field::handleRandomAttack() {
+    int target_x = rand() % columns;
+    int target_y = rand() % rows;
+
+    handleAttack({target_x, target_y});
+}
