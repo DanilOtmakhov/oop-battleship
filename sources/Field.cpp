@@ -146,6 +146,11 @@ void Field::handleAttack(Coordinate coordinate) {
     }
 
     FieldCell& cell = field[coordinate.y][coordinate.x];
+
+    if (cell.ship) {
+        cell.ship->handleTakenDamage(coordinate);
+    }
+
     switch (cell.value) {
         case CellValue::Hidden:
             cell.value = CellValue::Revealed;

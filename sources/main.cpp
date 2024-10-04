@@ -77,6 +77,9 @@ int main() {
 
     std::vector<Ship*> ships = manager.getShips();
 
+    ships[0]->changeOrientaion(true);
+    ships[1]->changeOrientaion(true);
+
     gamefield.placeShip(ships[0], true, {7, 0});
     gamefield.placeShip(ships[1], true, {0, 7});
     gamefield.placeShip(ships[2], false, {3, 1});
@@ -90,11 +93,29 @@ int main() {
 
     gamefield.handleAttack({7, 0});
     gamefield.handleAttack({7, 0});
+    gamefield.handleAttack({7, 1});
+    gamefield.handleAttack({7, 1});
+    gamefield.handleAttack({7, 2});
+    gamefield.handleAttack({7, 2});
+    gamefield.handleAttack({7, 3});
+    gamefield.handleAttack({3, 1});
+    gamefield.handleAttack({7, 3});
     gamefield.handleAttack({2, 1});
     gamefield.handleAttack({5, 5});
     gamefield.handleAttack({8, 9});
+    gamefield.handleAttack({8, 9});
 
     display(gamefield);
+
+    for (int i = 0; i < 10; i++) {
+        if (ships[i]->getStatus() == ShipStatus::Untouched) {
+            std::cout << "Ship " << i + 1 << ": " << "Untoched" << std::endl;
+        } else if (ships[i]->getStatus() == ShipStatus::Damaged) {
+            std::cout << "Ship " << i + 1 << ": " << "Damaged" << std::endl;
+        } else {
+            std::cout << "Ship " << i + 1 << ": " << "Destroyed" << std::endl;
+        }
+    }
 
     return 0;
 }

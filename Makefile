@@ -4,13 +4,13 @@ CC = g++
 CFLAGS = -Wall -Wextra -std=c++17
 LDFLAGS = -lm
 
-all: game
+all: battleship
 
-game: $(OBJECTS)
-	$(CC) $(OBJECTS) $(LDFLAGS) -o game
+battleship: $(OBJECTS)
+	$(CC) $(OBJECTS) $(LDFLAGS) -o battleship
 
 sources/%.o : sources/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf sources/*.o game
+	rm -rf sources/*.o battleship
