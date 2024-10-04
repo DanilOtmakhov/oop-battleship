@@ -7,7 +7,7 @@ void display(Field field) {
     int rows = field.getRows();
     int columns = field.getColumns();
     Colors colors;
-    std::cout << colors.white << "\033[1m" << std::setw((4 * columns + 1) / 2 + 6) << "Battle Ship" << colors.reset << std::endl;
+    //std::cout << colors.white << "\033[1m" << std::setw((4 * columns + 1) / 2 + 6) << "Battle Ship" << colors.reset << std::endl;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
             std::cout << colors.white << "+---";
@@ -50,28 +50,6 @@ void display(Field field) {
 
 
 int main() {
-    /*
-    Ship ship1 = Ship(4, true);
-    Ship ship2 = Ship(2, false);
-    Ship ship3 = Ship(3, false);
-    Field gamefield = Field(10, 10);
-    gamefield.placeShip(&ship1, ship1.getIsVertical(), {9, 6});
-    gamefield.placeShip(&ship2, ship2.getIsVertical(), {1, 1});
-    gamefield.placeShip(&ship3, ship3.getIsVertical(), {5, 6});
-
-    gamefield.handleAttack({1, 1});
-    ship2.handleTakenDamage({1, 1});
-
-    gamefield.handleAttack({1, 1});
-    ship2.handleTakenDamage({1, 1});
-
-    gamefield.handleAttack({2, 1});
-    ship2.handleTakenDamage({2, 1});
-
-    gamefield.handleAttack({2, 1});
-    ship2.handleTakenDamage({2, 1});
-    */
-
     Field gamefield = Field(10, 10);
     ShipManager manager = ShipManager();
 
@@ -90,31 +68,13 @@ int main() {
     gamefield.placeShip(ships[7], false, {4, 8});
     gamefield.placeShip(ships[8], false, {1, 3});
     gamefield.placeShip(ships[9], false, {0, 0});
-    /*
-    gamefield.handleAttack({7, 0});
-    gamefield.handleAttack({7, 0});
-    gamefield.handleAttack({7, 1});
-    gamefield.handleAttack({7, 1});
-    gamefield.handleAttack({7, 2});
-    gamefield.handleAttack({7, 2});
-    gamefield.handleAttack({7, 3});
-    gamefield.handleAttack({3, 1});
-    gamefield.handleAttack({7, 3});
-    gamefield.handleAttack({2, 1});
-    gamefield.handleAttack({5, 5});
-    gamefield.handleAttack({8, 9});
-    gamefield.handleAttack({8, 9});
-    */
-
-
-    //display(gamefield);
 
     for (int i = 0; i < 100; i++) {
         gamefield.handleRandomAttack();
     }
 
     display(gamefield);
-
+    /*
     for (int i = 0; i < 10; i++) {
         if (ships[i]->getStatus() == ShipStatus::Untouched) {
             std::cout << "Ship " << i + 1 << ": " << "Untoched" << std::endl;
@@ -124,6 +84,7 @@ int main() {
             std::cout << "Ship " << i + 1 << ": " << "Destroyed" << std::endl;
         }
     }
+    */
 
     return 0;
 }
