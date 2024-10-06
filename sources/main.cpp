@@ -7,7 +7,7 @@ void display(Field field) {
     int rows = field.getRows();
     int columns = field.getColumns();
     Colors colors;
-    //std::cout << colors.white << "\033[1m" << std::setw((4 * columns + 1) / 2 + 6) << "Battle Ship" << colors.reset << std::endl;
+    std::cout << colors.white << "\033[1m" << std::setw((4 * columns + 1) / 2 + 6) << "Battle Ship" << colors.reset << std::endl;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
             std::cout << colors.white << "+---";
