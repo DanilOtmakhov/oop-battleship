@@ -148,7 +148,8 @@ void Field::handleAttack(Coordinate coordinate) {
     FieldCell& cell = field[coordinate.y][coordinate.x];
 
     if (cell.ship) {
-        cell.ship->handleTakenDamage(coordinate);
+        int segmentIndex = cell.ship->getSegmentIndexByCoordinate(coordinate);
+        cell.ship->handleTakenDamage(segmentIndex);
     }
 
     switch (cell.value) {

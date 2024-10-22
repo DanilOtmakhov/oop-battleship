@@ -35,21 +35,26 @@ void Ship::setSegmentCoordinate(int index, Coordinate coordinate) {
     segments[index].coordinate = coordinate;
 }
 
-void Ship::handleTakenDamage(Coordinate coordinate) {
+int Ship::getSegmentIndexByCoordinate(Coordinate coordinate) {
     for (int i = 0; i < length; i++) {
         ShipSegment& currentSegment = segments[i];
         if (currentSegment.coordinate == coordinate) {
-            currentSegment.health--;
-            if (currentSegment.health == 0) {
-                currentSegment.status = SegmentStatus::Destroyed;
-                remainingSegments--;
-            } else {
-                currentSegment.status = SegmentStatus::Damaged;
-                status = ShipStatus::Damaged;
-            }
+            return i;
         }
-        if (remainingSegments == 0) {
-            status = ShipStatus::Destroyed;
-        }
+    }
+}
+
+void Ship::handleTakenDamage(int segmentIndex) {
+    ShipSegment& currentSegment = segments[segmentIndex];
+    currentSegment.health--;
+    if (currentSegment.health == 0) {
+        currentSegment.status = SegmentStatus::Destroyed;
+        remainingSegments--;
+    } else {
+        currentSegment.status = SegmentStatus::Damaged;
+        status = ShipStatus::Damaged;
+    }
+    if (remainingSegments == 0) {
+        status = ShipStatus::Destroyed;
     }
 }

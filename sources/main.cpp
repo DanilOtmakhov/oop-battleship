@@ -68,13 +68,13 @@ int main() {
     gamefield.placeShip(ships[7], false, {4, 8});
     gamefield.placeShip(ships[8], false, {1, 3});
     gamefield.placeShip(ships[9], false, {0, 0});
-
+    
     for (int i = 0; i < 100; i++) {
         gamefield.handleRandomAttack();
     }
 
     display(gamefield);
-    /*
+
     for (int i = 0; i < 10; i++) {
         if (ships[i]->getStatus() == ShipStatus::Untouched) {
             std::cout << "Ship " << i + 1 << ": " << "Untoched" << std::endl;
@@ -84,7 +84,7 @@ int main() {
             std::cout << "Ship " << i + 1 << ": " << "Destroyed" << std::endl;
         }
     }
-    */
+
 
     return 0;
 }

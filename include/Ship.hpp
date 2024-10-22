@@ -22,7 +22,8 @@ class Ship {
         ShipStatus getStatus();
         void setStatus(ShipStatus newStatus);
         void setSegmentCoordinate(int index, Coordinate coordinate);
-        void handleTakenDamage(Coordinate coordinate);
+        int getSegmentIndexByCoordinate(Coordinate coordinate);
+        void handleTakenDamage(int segmentIndex);
 };
 
 #endif
