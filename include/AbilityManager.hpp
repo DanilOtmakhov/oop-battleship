@@ -1,0 +1,4 @@
+#ifndef ABILITY_MANAGER_HPP
+#define ABILITY_MANAGER_HPP
+
+#endif

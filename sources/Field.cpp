@@ -142,7 +142,7 @@ void Field::placeShip(Ship* ship, bool isVertical, Coordinate coordinate) {
 
 void Field::handleAttack(Coordinate coordinate) {
     if (!isCoordinateCorrect(coordinate)) {
-        throw std::out_of_range("Coordinate is not correct!");
+        std::cout << "Coordinate is not correct!" << std::endl;
     }
 
     FieldCell& cell = field[coordinate.y][coordinate.x];

@@ -1,0 +1,4 @@
+#ifndef ABILITY_CREATOR_HPP
+#define ABILITY_CREATOR_HPP
+
+#endif
