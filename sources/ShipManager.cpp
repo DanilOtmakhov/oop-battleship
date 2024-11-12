@@ -6,20 +6,28 @@ ShipManager::ShipManager(int number, std::vector<int> lengths) {
         if (lengths[i] < 1 || lengths[i] > 4) {
             throw std::invalid_argument("Length of ship must be between 1 and 4");
         }
-        ships.push_back(Ship(lengths[i]));
+        ships.push_back(new Ship(lengths[i]));
     }
 }
 
 ShipManager::ShipManager() : ShipManager(10, {4, 3, 3, 2, 2, 2, 1, 1, 1, 1}) {}
 
-std::vector<Ship*> ShipManager::getShips() {
-    std::vector<Ship*> shipPointers;
-    for (int i = 0; i < ships.size(); i++) {
-        shipPointers.push_back(&ships[i]);
-    }
-    return shipPointers;
+std::vector <Ship*> ShipManager::getShips() {
+    return ships;
 }
 
-void ShipManager::addShip(int length) {
-    ships.push_back(Ship(length));
+Ship* ShipManager::getShip(int index) {
+    if (index < 0 || index >= ships.size()) {
+        throw std::out_of_range("Invalid index!");
+    }
+    return ships[index];
+}
+
+bool ShipManager::allShipsDestroyed() {
+    for (auto* ship : ships) {
+        if (ship->getStatus() != ShipStatus::Destroyed) {
+            return false;
+        }
+    }
+    return true;
 }

@@ -29,7 +29,7 @@ void Ship::setStatus(ShipStatus newStatus) {
 }
 
 void Ship::setSegmentCoordinate(int index, Coordinate coordinate) {
-    if (index >= length) {
+    if (index < 0 || index >= length) {
         throw std::out_of_range("Invalid segment index!");
     }
     segments[index].coordinate = coordinate;
@@ -44,10 +44,24 @@ int Ship::getSegmentIndexByCoordinate(Coordinate coordinate) {
     }
 }
 
-void Ship::handleTakenDamage(int segmentIndex) {
+SegmentStatus Ship::getSegmentStatusByIndex(int index) {
+    if (index < 0 || index >= length) {
+        throw std::out_of_range("Invalid segment index!");
+    }
+    return segments[index].status;
+}
+
+Coordinate Ship::getSegmentCoordinateByIndex(int index) {
+    if (index < 0 || index >= length) {
+        throw std::out_of_range("Invalid segment index!");
+    }
+    return segments[index].coordinate;
+}
+
+void Ship::handleTakenDamage(int segmentIndex, int damage) {
     ShipSegment& currentSegment = segments[segmentIndex];
-    currentSegment.health--;
-    if (currentSegment.health == 0) {
+    currentSegment.health -= damage;
+    if (currentSegment.health <= 0) {
         currentSegment.status = SegmentStatus::Destroyed;
         remainingSegments--;
     } else {
@@ -57,4 +71,8 @@ void Ship::handleTakenDamage(int segmentIndex) {
     if (remainingSegments == 0) {
         status = ShipStatus::Destroyed;
     }
+}
+
+Coordinate Ship::getCoordinate() {
+    return segments[0].coordinate;
 }

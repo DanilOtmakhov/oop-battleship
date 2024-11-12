@@ -88,7 +88,7 @@ int Field::getColumns() {
 
 void Field::setCellStatus(Coordinate coordinate, CellStatus status) {
     if (!isCoordinateCorrect(coordinate)) {
-        throw std::out_of_range("Coordinate is not correct!");
+        throw OutOfBoundsException();
     }
 
     field[coordinate.y][coordinate.x].status = status;
@@ -96,7 +96,7 @@ void Field::setCellStatus(Coordinate coordinate, CellStatus status) {
 
 CellStatus Field::getCellStatus(Coordinate coordinate) {
     if (!isCoordinateCorrect(coordinate)) {
-        throw std::out_of_range("Coordinate is not correct!");
+        throw OutOfBoundsException();
     }
 
     return field[coordinate.y][coordinate.x].status;
@@ -104,7 +104,7 @@ CellStatus Field::getCellStatus(Coordinate coordinate) {
 
 void Field::setCellValue(Coordinate coordinate, CellValue value) {
     if (!isCoordinateCorrect(coordinate)) {
-        throw std::out_of_range("Coordinate is not correct!");
+        throw OutOfBoundsException();
     }
 
     field[coordinate.y][coordinate.x].value = value;
@@ -112,7 +112,7 @@ void Field::setCellValue(Coordinate coordinate, CellValue value) {
 
 CellValue Field::getCellValue(Coordinate coordinate) {
     if (!isCoordinateCorrect(coordinate)) {
-        throw std::out_of_range("Coordinate is not correct!");
+        throw OutOfBoundsException();
     }
 
     return field[coordinate.y][coordinate.x].value;
@@ -120,7 +120,7 @@ CellValue Field::getCellValue(Coordinate coordinate) {
 
 void Field::placeShip(Ship* ship, bool isVertical, Coordinate coordinate) {
     if (!checkPlaceForShip(ship->getLength(), isVertical, coordinate)) {
-        throw std::out_of_range("Unable to place ship at given coordinates!");
+        throw IncorrectShipPlacementException();
     }
 
     int x0 = coordinate.x;
@@ -140,17 +140,12 @@ void Field::placeShip(Ship* ship, bool isVertical, Coordinate coordinate) {
     }
 }
 
-void Field::handleAttack(Coordinate coordinate) {
+AttackResult Field::handleAttack(Coordinate coordinate, int damage) {
     if (!isCoordinateCorrect(coordinate)) {
-        std::cout << "Coordinate is not correct!" << std::endl;
+        throw OutOfBoundsException();
     }
 
     FieldCell& cell = field[coordinate.y][coordinate.x];
-
-    if (cell.ship) {
-        int segmentIndex = cell.ship->getSegmentIndexByCoordinate(coordinate);
-        cell.ship->handleTakenDamage(segmentIndex);
-    }
 
     switch (cell.value) {
         case CellValue::Hidden:
@@ -158,7 +153,11 @@ void Field::handleAttack(Coordinate coordinate) {
             cell.status = CellStatus::Revealed;
             break;
         case CellValue::ShipPart:
-            cell.value = CellValue::Damaged;
+            if (damage == 1) {
+                cell.value = CellValue::Damaged;
+            } else {
+                cell.value = CellValue::Destroyed;
+            }
             cell.status = CellStatus::Revealed;
             break;
         case CellValue::Damaged:
@@ -166,8 +165,44 @@ void Field::handleAttack(Coordinate coordinate) {
             break;
         default:
             std::cout << "This cell is already attacked!" << std::endl;
-            break;
+            return AttackResult::AlreadyAttacked;
     }
+
+    if (cell.ship) {
+        int segmentIndex = cell.ship->getSegmentIndexByCoordinate(coordinate);
+        cell.ship->handleTakenDamage(segmentIndex, damage);
+
+        if (cell.ship->getStatus() == ShipStatus::Destroyed) {
+            bool isVertical = cell.ship->getIsVertical();
+            int shipLength = cell.ship->getLength();
+            int x0 = cell.ship->getCoordinate().x;
+            int y0 = cell.ship->getCoordinate().y;
+
+            for (int i = 0; i < shipLength; i++) {
+                int x = isVertical ? x0 : x0 + i;
+                int y = isVertical ? y0 + i : y0;
+
+                field[y][x].value = CellValue::ShipDestroyed;
+
+                for (int dx = -1; dx <= 1; dx++) {
+                    for (int dy = -1; dy <= 1; dy++) {
+                        if (dx == 0 && dy == 0) continue;
+                        int neighborX = x + dx;
+                        int neighborY = y + dy;
+
+                        if (isCoordinateCorrect({neighborX, neighborY}) && !field[neighborY][neighborX].ship) {
+                            field[neighborY][neighborX].value = CellValue::Revealed;
+                        }
+                    }
+                }
+            }
+            return AttackResult::ShipDestroyed;
+        } else {
+            return AttackResult::ShipDamaged;
+        }
+    }
+
+    return AttackResult::Missed;
 }
 
 void Field::handleRandomAttack() {
@@ -175,4 +210,11 @@ void Field::handleRandomAttack() {
     int target_y = rand() % rows;
 
     handleAttack({target_x, target_y});
+}
+
+bool Field::isShipInCell(Coordinate coordinate) {
+    if (!isCoordinateCorrect(coordinate)) {
+        throw OutOfBoundsException();
+    }
+    return field[coordinate.y][coordinate.x].ship ? true : false;
 }

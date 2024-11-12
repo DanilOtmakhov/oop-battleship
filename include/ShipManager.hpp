@@ -8,12 +8,13 @@
 
 class ShipManager {
     private:
-        std::vector<Ship> ships;
+        std::vector <Ship*> ships;
     public:
         ShipManager(int number, std::vector<int> lengths);
         ShipManager();
-        std::vector<Ship*> getShips();
-        void addShip(int length);
+        std::vector <Ship*> getShips();
+        Ship* getShip(int index);
+        bool allShipsDestroyed();
 };
 
 #endif

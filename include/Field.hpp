@@ -5,14 +5,15 @@
 #include <vector>
 #include "Ship.hpp"
 #include "Structs.hpp"
+#include "OutOfBoundsException.hpp"
+#include "IncorrectShipPlacementException.hpp"
 
 
 class Field {
     private:
         int rows;
         int columns;
-        std::vector<std::vector<FieldCell>> field;
-        bool isCoordinateCorrect(Coordinate coordinate);
+        std::vector <std::vector <FieldCell>> field;
         bool checkPlaceForShip(int ShipLength, bool isVertical, Coordinate coordinate);
     public:
         Field(int rows, int columns);
@@ -20,6 +21,7 @@ class Field {
         Field& operator = (const Field& other);
         Field(Field&& other);
         Field& operator = (Field&& other);
+        bool isCoordinateCorrect(Coordinate coordinate);
         int getRows();
         int getColumns();
         void setCellStatus(Coordinate coordinate, CellStatus status);
@@ -27,8 +29,9 @@ class Field {
         void setCellValue(Coordinate coordinate, CellValue value);
         CellValue getCellValue(Coordinate coordinate);
         void placeShip(Ship* ship, bool isVertical, Coordinate coordinate);
-        void handleAttack(Coordinate coordinate);
+        AttackResult handleAttack(Coordinate coordinate, int damage = 1);
         void handleRandomAttack();
+        bool isShipInCell(Coordinate coordinate);
 };
 
 #endif

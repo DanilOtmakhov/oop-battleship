@@ -4,26 +4,37 @@
 
 class Ship;
 
-enum class CellStatus {Hidden, Revealed};
+enum class CellStatus {
+    Hidden,
+    Revealed
+};
 
 enum class CellValue : char {
     Hidden = ' ',
     Revealed = '*',
     ShipPart = 'S',
     Damaged = 'x',
-    Destroyed = '0'
+    Destroyed = '0',
+    ShipDestroyed = 'D'
 };
 
-enum class SegmentStatus {Untouched, Damaged, Destroyed};
+enum class SegmentStatus {
+    Untouched,
+    Damaged,
+    Destroyed
+};
 
-enum class ShipStatus {Untouched, Damaged, Destroyed};
+enum class ShipStatus {
+    Untouched,
+    Damaged,
+    Destroyed
+};
 
-struct Colors {
-    const std::string white = "\033[97m";
-    const std::string blue = "\033[36m";
-    const std::string red = "\033[91m";
-    const std::string yellow = "\033[33m";
-    const std::string reset = " \033[0m";
+enum class AttackResult {
+    ShipDestroyed,
+    Missed,
+    ShipDamaged,
+    AlreadyAttacked
 };
 
 struct Coordinate {
