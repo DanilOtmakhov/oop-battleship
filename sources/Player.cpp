@@ -15,6 +15,14 @@ std::vector <Ship*> Player::getShips() {
     return ships.getShips();
 }
 
+ShipManager& Player::getShipManager() {
+    return ships;
+}
+
+AbilityManager& Player::getAbilityManager() {
+    return abilities;
+}
+
 Player* Player::getEnemyPointer() {
     return enemy;
 }

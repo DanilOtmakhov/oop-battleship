@@ -45,7 +45,7 @@ void Game::startGame() {
 
     displayer.displayFields(gamefield, enemyGamefield);
 
-    while (!enemyShips.allShipsDestroyed()) {
+    while (!enemyPlayer.getShipManager().allShipsDestroyed()) {
         displayer.displayAttackOrApplyAbility();
         int playerChoise = inputHandler.handleAttackOrApplyAbilityInput();
         try {
@@ -61,8 +61,8 @@ void Game::startGame() {
                     break;
                 }
                 case 2: {
-                    abilities.checkAbilitiesEmpty();
-                    Ability* currentAbility = abilities.getAbility();
+                    player.getAbilityManager().checkAbilitiesEmpty();
+                    Ability* currentAbility = player.getAbilityManager().getAbility();
                     if (currentAbility->getAbilityType() == AbilityType::Scanner) {
                         displayer.displayInputCoordinateForScanner();
                     }
@@ -79,7 +79,7 @@ void Game::startGame() {
                             break;
                         case AbilityResult::RandomHitShipDestroyed:
                             displayer.displayAddingAbility();
-                        abilities.addAbility();
+                        player.getAbilityManager().addAbility();
                             break;
                     default:
                         break;
@@ -100,6 +100,24 @@ void Game::startGame() {
             displayer.displayException(exception);
             continue;
         }
+        //TODO add CellIsAlreadyAttackException
         displayer.displayFields(gamefield, enemyGamefield);
     }
+}
+
+
+void Game::gameRound() {
+    
+}
+
+void Game::gameOver() {
+
+}
+
+void Game::saveGame() {
+
+}
+
+void Game::loadGame() {
+
 }

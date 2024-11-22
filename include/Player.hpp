@@ -19,6 +19,8 @@ class Player {
         void setDamage(int newDamage);
         Field& getField();
         std::vector <Ship*> getShips();
+        ShipManager& getShipManager();
+        AbilityManager& getAbilityManager();
         Player* getEnemyPointer();
         void setEnemyPlayer(Player player);
         AttackResult attack();
