@@ -1,9 +1,7 @@
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 
-#include "Field.hpp"
-#include "ShipManager.hpp"
-#include "InputHandler.hpp"
+#include "IPlayer.hpp"
 
 class AbilityManager;
 
