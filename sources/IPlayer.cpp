@@ -1,13 +1,13 @@
 #include "../include/IPlayer.hpp"
 
-IPlayer::IPlayer(Field field, ShipManager shipManager) : field(field), shipManager(shipManager) {}
+IPlayer::IPlayer(Field& field, ShipManager& shipManager) : field(field), shipManager(shipManager) {}
 
 Field& IPlayer::getField() {
     return field;
 }
 
 void IPlayer::setEnemy(IPlayer* enemy) {
-    enemy = enemy;
+    this->enemy = enemy;
 }
 
 IPlayer* IPlayer::getEnemyPointer() {

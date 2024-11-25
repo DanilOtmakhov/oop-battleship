@@ -5,8 +5,8 @@
 
 class Bot: public IPlayer {
     public:
-        Bot(Field field, ShipManager shipManager);
-        AttackResult attack();
+        Bot(Field& field, ShipManager& shipManager);
+        AttackResult attack() override;
 };
 
 #endif

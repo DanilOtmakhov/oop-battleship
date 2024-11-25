@@ -3,7 +3,7 @@
 
 AbilityResult ScannerAbility::applyAbility(Player& player) {
     InputHandler inputHandler;
-    Player* enemyPlayer = player.getEnemyPointer();
+    IPlayer* enemyPlayer = player.getEnemyPointer();
     Coordinate selectedCoordinate = inputHandler.handleCoordinateInput();
     for (int y = selectedCoordinate.y; y <= selectedCoordinate.y + 1; y++) {
         for (int x = selectedCoordinate.x; x <= selectedCoordinate.x + 1; x++) {

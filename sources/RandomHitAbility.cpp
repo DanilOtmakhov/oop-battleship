@@ -2,10 +2,10 @@
 
 
 AbilityResult RandomHitAbility::applyAbility(Player& player) {
-    Player* enemyPlayer = player.getEnemyPointer();
+    IPlayer* enemyPlayer = player.getEnemyPointer();
     std::vector <Coordinate> availableCoordinatesToAttack;
 
-    std::vector <Ship*> ships = enemyPlayer->getShips();
+    std::vector <Ship*> ships = enemyPlayer->getShipManager().getShips();
     std::vector <Ship*> aliveShips;
 
     auto isAlive = [](Ship* ship) {

@@ -56,7 +56,6 @@ void ConsoleDisplayer::displayFields(Field field1, Field field2) {
     int rows = field1.getRows();
     int columns = field1.getColumns();
     Colors colors;
-
     std::cout << "    ";
     for (int j = 0; j < columns; j++) {
         if (j == 0) {

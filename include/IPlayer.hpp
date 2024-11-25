@@ -8,10 +8,10 @@
 class IPlayer {
     protected:
         Field& field;
-        ShipManager shipManager;
+        ShipManager& shipManager;
         IPlayer* enemy;
     public:
-        IPlayer(Field field, ShipManager shipManager);
+        IPlayer(Field& field, ShipManager& shipManager);
         virtual ~IPlayer() {};
         Field& getField();
         void setEnemy(IPlayer* enemy);

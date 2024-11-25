@@ -2,26 +2,18 @@
 #define PLAYER_HPP
 
 #include "IPlayer.hpp"
-
+#include "AbilityManager.hpp"
 class AbilityManager;
 
-class Player {
+class Player: public IPlayer {
     private:
-        Field& field;
-        ShipManager& ships;
-        AbilityManager& abilities;
-        Player* enemy;
+        AbilityManager& abilityManager;
         int damage = 1;
     public:
-        Player(Field& field, ShipManager& ships, AbilityManager& abilities);
+        Player(Field& field, ShipManager& shipManager, AbilityManager& abilityManager);
         void setDamage(int newDamage);
-        Field& getField();
-        std::vector <Ship*> getShips();
-        ShipManager& getShipManager();
         AbilityManager& getAbilityManager();
-        Player* getEnemyPointer();
-        void setEnemyPlayer(Player player);
-        AttackResult attack();
+        AttackResult attack() override;
 };
 
 #endif

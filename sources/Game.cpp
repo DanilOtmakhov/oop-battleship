@@ -1,51 +1,54 @@
 #include "../include/Game.hpp"
 
-
 void Game::startGame() {
+
     ConsoleDisplayer displayer;
     InputHandler inputHandler;
-    Field gamefield = Field(10, 10);
-    Field enemyGamefield = Field(10, 10);
-    ShipManager ships = ShipManager();
-    ShipManager enemyShips = ShipManager();
-    AbilityManager abilities = AbilityManager();
-    AbilityManager enemyAbilities = AbilityManager();
-    Player player = Player(gamefield, ships, abilities);
-    Player enemyPlayer = Player(enemyGamefield, enemyShips, enemyAbilities);
-    player.setEnemyPlayer(enemyPlayer);
-    enemyPlayer.setEnemyPlayer(player);
 
-    ships.getShip(0)->changeOrientaion(true);
-    ships.getShip(1)->changeOrientaion(true);
+    Field field = Field(10, 10);
+    ShipManager shipManager = ShipManager();
+    AbilityManager abilityManager = AbilityManager();
 
-    gamefield.placeShip(ships.getShip(0), true, {7, 0});
-    gamefield.placeShip(ships.getShip(1), true, {0, 7});
-    gamefield.placeShip(ships.getShip(2), false, {3, 1});
-    gamefield.placeShip(ships.getShip(3), false, {3, 4});
-    gamefield.placeShip(ships.getShip(4), false, {2, 6});
-    gamefield.placeShip(ships.getShip(5), false, {7, 6});
-    gamefield.placeShip(ships.getShip(6), false, {8, 9});
-    gamefield.placeShip(ships.getShip(7), false, {4, 8});
-    gamefield.placeShip(ships.getShip(8), false, {1, 3});
-    gamefield.placeShip(ships.getShip(9), false, {0, 0});
+    Field botField = Field(10, 10);
+    ShipManager botShipManager = ShipManager();
 
-    enemyShips.getShip(0)->changeOrientaion(true);
-    enemyShips.getShip(1)->changeOrientaion(true);
+    Player player = Player(field, shipManager, abilityManager);
+    Bot bot = Bot(botField, botShipManager);
 
-    enemyGamefield.placeShip(enemyShips.getShip(0), true, {7, 0});
-    enemyGamefield.placeShip(enemyShips.getShip(1), true, {0, 7});
-    enemyGamefield.placeShip(enemyShips.getShip(2), false, {3, 1});
-    enemyGamefield.placeShip(enemyShips.getShip(3), false, {3, 4});
-    enemyGamefield.placeShip(enemyShips.getShip(4), false, {2, 6});
-    enemyGamefield.placeShip(enemyShips.getShip(5), false, {7, 6});
-    enemyGamefield.placeShip(enemyShips.getShip(6), false, {8, 9});
-    enemyGamefield.placeShip(enemyShips.getShip(7), false, {4, 8});
-    enemyGamefield.placeShip(enemyShips.getShip(8), false, {1, 3});
-    enemyGamefield.placeShip(enemyShips.getShip(9), false, {0, 0});
+    player.setEnemy(&bot);
+    bot.setEnemy(&player);
 
-    displayer.displayFields(gamefield, enemyGamefield);
+    shipManager.getShip(0)->changeOrientaion(true);
+    shipManager.getShip(1)->changeOrientaion(true);
 
-    while (!enemyPlayer.getShipManager().allShipsDestroyed()) {
+    field.placeShip(shipManager.getShip(0), true, {7, 0});
+    field.placeShip(shipManager.getShip(1), true, {0, 7});
+    field.placeShip(shipManager.getShip(2), false, {3, 1});
+    field.placeShip(shipManager.getShip(3), false, {3, 4});
+    field.placeShip(shipManager.getShip(4), false, {2, 6});
+    field.placeShip(shipManager.getShip(5), false, {7, 6});
+    field.placeShip(shipManager.getShip(6), false, {8, 9});
+    field.placeShip(shipManager.getShip(7), false, {4, 8});
+    field.placeShip(shipManager.getShip(8), false, {1, 3});
+    field.placeShip(shipManager.getShip(9), false, {0, 0});
+
+    botShipManager.getShip(0)->changeOrientaion(true);
+    botShipManager.getShip(1)->changeOrientaion(true);
+
+    botField.placeShip(botShipManager.getShip(0), true, {7, 0});
+    botField.placeShip(botShipManager.getShip(1), true, {0, 7});
+    botField.placeShip(botShipManager.getShip(2), false, {3, 1});
+    botField.placeShip(botShipManager.getShip(3), false, {3, 4});
+    botField.placeShip(botShipManager.getShip(4), false, {2, 6});
+    botField.placeShip(botShipManager.getShip(5), false, {7, 6});
+    botField.placeShip(botShipManager.getShip(6), false, {8, 9});
+    botField.placeShip(botShipManager.getShip(7), false, {4, 8});
+    botField.placeShip(botShipManager.getShip(8), false, {1, 3});
+    botField.placeShip(botShipManager.getShip(9), false, {0, 0});
+
+    displayer.displayFields(field, botField);
+
+    while (/*bot.getShipManager()*/!botShipManager.allShipsDestroyed()) {
         displayer.displayAttackOrApplyAbility();
         int playerChoise = inputHandler.handleAttackOrApplyAbilityInput();
         try {
@@ -56,7 +59,7 @@ void Game::startGame() {
                     attackResult = player.attack();
                     if (attackResult == AttackResult::ShipDestroyed) {
                         displayer.displayAddingAbility();
-                        abilities.addAbility();
+                        player.getAbilityManager().addAbility();
                     }
                     break;
                 }
@@ -101,13 +104,13 @@ void Game::startGame() {
             continue;
         }
         //TODO add CellIsAlreadyAttackException
-        displayer.displayFields(gamefield, enemyGamefield);
+        displayer.displayFields(field, botField);
     }
 }
 
 
 void Game::gameRound() {
-    
+
 }
 
 void Game::gameOver() {
