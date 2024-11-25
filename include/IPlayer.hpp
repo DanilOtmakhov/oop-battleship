@@ -6,13 +6,14 @@
 #include "InputHandler.hpp"
 
 class IPlayer {
-    private:
+    protected:
         Field& field;
         ShipManager shipManager;
         IPlayer* enemy;
     public:
         IPlayer(Field field, ShipManager shipManager);
         virtual ~IPlayer() {};
+        Field& getField();
         void setEnemy(IPlayer* enemy);
         IPlayer* getEnemyPointer();
         ShipManager& getShipManager();

@@ -205,11 +205,11 @@ AttackResult Field::handleAttack(Coordinate coordinate, int damage) {
     return AttackResult::Missed;
 }
 
-void Field::handleRandomAttack() {
+AttackResult Field::handleRandomAttack() {
     int target_x = rand() % columns;
     int target_y = rand() % rows;
 
-    handleAttack({target_x, target_y});
+    return handleAttack({target_x, target_y});
 }
 
 bool Field::isShipInCell(Coordinate coordinate) {

@@ -30,7 +30,7 @@ class Field {
         CellValue getCellValue(Coordinate coordinate);
         void placeShip(Ship* ship, bool isVertical, Coordinate coordinate);
         AttackResult handleAttack(Coordinate coordinate, int damage = 1);
-        void handleRandomAttack();
+        AttackResult handleRandomAttack();
         bool isShipInCell(Coordinate coordinate);
 };
 
