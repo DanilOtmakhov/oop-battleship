@@ -2,8 +2,8 @@
 
 void Game::startGame() {
 
-    ConsoleDisplayer displayer;
-    InputHandler inputHandler;
+    // ConsoleDisplayer displayer;
+    // InputHandler inputHandler;
 
     Field field = Field(10, 10);
     ShipManager shipManager = ShipManager();
@@ -48,7 +48,7 @@ void Game::startGame() {
 
     displayer.displayFields(field, botField);
 
-    while (/*bot.getShipManager()*/!botShipManager.allShipsDestroyed()) {
+    while (!bot.getShipManager().allShipsDestroyed() && !player.getShipManager().allShipsDestroyed()) {
         displayer.displayAttackOrApplyAbility();
         int playerChoise = inputHandler.handleAttackOrApplyAbilityInput();
         try {
@@ -103,7 +103,11 @@ void Game::startGame() {
             displayer.displayException(exception);
             continue;
         }
-        //TODO add CellIsAlreadyAttackException
+        catch (AlreadyAttackedCellException& exception) {
+            displayer.displayException(exception);
+            continue;
+        }
+        bot.attack();
         displayer.displayFields(field, botField);
     }
 }

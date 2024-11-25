@@ -164,8 +164,7 @@ AttackResult Field::handleAttack(Coordinate coordinate, int damage) {
             cell.value = CellValue::Destroyed;
             break;
         default:
-            std::cout << "This cell is already attacked!" << std::endl;
-            return AttackResult::AlreadyAttacked;
+            throw AlreadyAttackedCellException();
     }
 
     if (cell.ship) {

@@ -4,12 +4,12 @@
 #include <exception>
 #include <string>
 class OutOfBoundsException : public std::exception {
-private:
-	std::string message;
+	private:
+		std::string message;
 
-public:
-	OutOfBoundsException();
-	virtual const char* what() const noexcept override;
+	public:
+		OutOfBoundsException();
+		virtual const char* what() const noexcept override;
 };
 
 #endif

@@ -5,12 +5,12 @@
 #include <string>
 
 class IncorrectShipPlacementException : public std::exception {
-private:
-    std::string message;
+    private:
+        std::string message;
 
-public:
-    IncorrectShipPlacementException();
-    virtual const char* what() const noexcept override;
+    public:
+        IncorrectShipPlacementException();
+        virtual const char* what() const noexcept override;
 };
 
 #endif

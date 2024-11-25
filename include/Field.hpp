@@ -7,6 +7,7 @@
 #include "Structs.hpp"
 #include "OutOfBoundsException.hpp"
 #include "IncorrectShipPlacementException.hpp"
+#include "AlreadyAttackedCellException.hpp"
 
 
 class Field {

@@ -12,8 +12,8 @@ class Game {
     private:
         //Player& player;
         //Player& enemyPlayer;
-        // ConsoleDisplayer displayer = ConsoleDisplayer();
-        // InputHandler inputHandler = InputHandler();
+        ConsoleDisplayer displayer = ConsoleDisplayer();
+        InputHandler inputHandler = InputHandler();
     public:
         void startGame();
         void gameRound();
