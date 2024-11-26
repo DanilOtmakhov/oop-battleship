@@ -16,10 +16,8 @@ class Game {
     public:
         Game(Player player, Bot bot);
         void startGame();
-        void gameRound();
+        void gameRound(int playerChoise);
         void gameOver();
-        void saveGame();
-        void loadGame();
 };
 
 #endif

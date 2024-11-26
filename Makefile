@@ -1,7 +1,8 @@
 SOURCES = $(wildcard sources/*.cpp)
 OBJECTS = $(patsubst sources/%.cpp,sources/%.o,$(SOURCES))
+
 CC = g++
-CFLAGS = -Wall -Wextra -std=c++17
+CFLAGS = -Wall -Wextra -std=c++17 -I/opt/homebrew/include
 LDFLAGS = -lm
 
 all: battleship
