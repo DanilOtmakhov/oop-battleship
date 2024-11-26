@@ -7,14 +7,14 @@
 #include "ConsoleDisplayer.hpp"
 #include "InputHandler.hpp"
 
-
 class Game {
     private:
-        //Player& player;
-        //Player& enemyPlayer;
+        Player player;
+        Bot bot;
         ConsoleDisplayer displayer = ConsoleDisplayer();
         InputHandler inputHandler = InputHandler();
     public:
+        Game(Player player, Bot bot);
         void startGame();
         void gameRound();
         void gameOver();
