@@ -5,6 +5,7 @@
 #include <iomanip>
 #include <vector>
 #include "Structs.hpp"
+#include <nlohmann/json.hpp>
 
 
 class Ship {
@@ -27,6 +28,8 @@ class Ship {
         int getSegmentIndexByCoordinate(Coordinate coordinate);
         void handleTakenDamage(int segmentIndex, int damage = 1);
         Coordinate getCoordinate();
+        friend void to_json(nlohmann::json& j, const Ship& s);
+        friend void from_json(const nlohmann::json& j, Ship& s);
 };
 
 #endif

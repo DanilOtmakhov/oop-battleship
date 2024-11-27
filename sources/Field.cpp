@@ -217,3 +217,17 @@ bool Field::isShipInCell(Coordinate coordinate) {
     }
     return field[coordinate.y][coordinate.x].ship ? true : false;
 }
+
+void Ship::to_json(nlohmann::json& j, const Field& f) {
+    j = nlohmann::json{
+        {"rows", f.rows},
+        {"columns", f.columns},
+        {"field", f.field}
+    };
+}
+
+void Ship::from_json(const nlohmann::json& j, Field& f) {
+    j.at("rows").get_to(f.rows);
+    j.at("columns").get_to(f.columns);
+    j.at("field").get_to(f.field);
+}

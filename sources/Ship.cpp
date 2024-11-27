@@ -76,3 +76,21 @@ void Ship::handleTakenDamage(int segmentIndex, int damage) {
 Coordinate Ship::getCoordinate() {
     return segments[0].coordinate;
 }
+
+void Ship::to_json(nlohmann::json& j, const Ship& s) {
+    j = nlohmann::json{
+        {"length", s.length},
+        {"isVertical", s.isVertical},
+        {"remainingSegments", s.remainingSegments},
+        {"status", s.status},
+        {"segments", s.segments}
+    };
+}
+
+void Ship::from_json(const nlohmann::json& j, Ship& s) {
+    j.at("length").get_to(s.length);
+    j.at("isVertical").get_to(s.isVertical);
+    j.at("remainingSegments").get_to(s.remainingSegments);
+    j.at("status").get_to(s.status);
+    j.at("segments").get_to(s.segments);
+}

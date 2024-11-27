@@ -33,6 +33,8 @@ class Field {
         AttackResult handleAttack(Coordinate coordinate, int damage = 1);
         AttackResult handleRandomAttack();
         bool isShipInCell(Coordinate coordinate);
+        friend void to_json(nlohmann::json& j, const Field& f);
+        friend void from_json(const nlohmann::json& j, Field& f);
 };
 
 #endif
