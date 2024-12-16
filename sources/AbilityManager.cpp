@@ -51,8 +51,47 @@ void AbilityManager::addAbility() {
     }
 }
 
+void AbilityManager::addAbility(AbilityType type) {
+    switch (type) {
+        case AbilityType::DoubleDamage:
+            abilities.push(new DoubleDamageAbility());
+            break;
+        case AbilityType::Scanner:
+            abilities.push(new ScannerAbility());
+            break;
+        case AbilityType::RandomHit:
+            abilities.push(new RandomHitAbility());
+            break;
+        default:
+            break;
+    }
+}
+
 void AbilityManager::checkAbilitiesEmpty() {
     if (abilities.empty()) {
         throw NoAbilitiesException();;
     }
+}
+
+bool AbilityManager::isAbilitiesEmpty() {
+    if (abilities.empty()) {
+        return true;
+    }
+    return false;
+}
+
+std::vector <AbilityType> AbilityManager::getAbilitiesTypes() {
+    std::vector<AbilityType> abilityTypes;
+    std::queue<Ability*> tempQueue = abilities;
+
+    while (!tempQueue.empty()) {
+        Ability* ability = tempQueue.front();
+        tempQueue.pop();
+
+        if (ability) {
+            abilityTypes.push_back(ability->getAbilityType());
+        }
+    }
+
+    return abilityTypes;
 }

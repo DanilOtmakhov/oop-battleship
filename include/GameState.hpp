@@ -1,15 +1,25 @@
 #ifndef GAME_STATE_HPP
 #define GAME_STATE_HPP
 
-#include <nlohmann/json.hpp>
+#include "Serialization.hpp"
+#include "Deserialization.hpp"
+#include "FileWrapper.hpp"
+#include "ConsoleDisplayer.hpp"
+#include "SaveFileHashMismatchException.hpp"
 #include <fstream>
+#include <sstream>
 
 class GameState {
     private:
-        Game& game;
+        Player& player;
+        Bot& bot;
     public:
-        void saveGame();
-        void loadGame();
+        GameState(Player& player, Bot& bot);
+        Player& getPlayer();
+        Bot& getBot();
+        void saveGame(const std::string& file);
+        void loadGame(const std::string& file);
+        std::string calculateHash(const std::string& data);
 };
 
 #endif

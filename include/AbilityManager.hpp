@@ -17,7 +17,10 @@ class AbilityManager {
         ~AbilityManager();
         Ability* getAbility();
         void addAbility();
+        void addAbility(AbilityType type);
+        std::vector <AbilityType> getAbilitiesTypes();
         void checkAbilitiesEmpty();
+        bool isAbilitiesEmpty();
 };
 
 #endif

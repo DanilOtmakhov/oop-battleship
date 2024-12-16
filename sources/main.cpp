@@ -1,7 +1,7 @@
 #include "../include/Game.hpp"
 
 int main() {
-    // * Initialize Player And Bot
+    // Initialize Player And Bot
     Field field = Field(10, 10);
     ShipManager shipManager = ShipManager();
     AbilityManager abilityManager = AbilityManager();
@@ -43,8 +43,12 @@ int main() {
     botField.placeShip(botShipManager.getShip(8), false, {1, 3});
     botField.placeShip(botShipManager.getShip(9), false, {0, 0});
 
-    Game game = Game(player, bot);
-    game.startGame();
+
+    //testing JSON
+    GameState gs = GameState(player, bot);
+
+    Game game = Game(player, bot, gs);
+    game.initializeGame();
 
     return 0;
 }

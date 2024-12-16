@@ -31,3 +31,7 @@ bool ShipManager::allShipsDestroyed() {
     }
     return true;
 }
+
+void ShipManager::addShip(Ship* ship) {
+    ships.push_back(ship);
+}

@@ -4,7 +4,6 @@ void ConsoleDisplayer::displayField(Field field, bool isEnemy) {
     int rows = field.getRows();
     int columns = field.getColumns();
     Colors colors;
-    //std::cout << colors.white << "\033[1m" << std::setw((4 * columns + 1) / 2 + 6) << "Battle Ship" << colors.reset << std::endl;
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < columns; j++) {
             std::cout << colors.white << "+---";
@@ -41,16 +40,7 @@ void ConsoleDisplayer::displayField(Field field, bool isEnemy) {
         std::cout << colors.white << "+---";
     }
     std::cout << colors.white << "+" << colors.reset << std::endl;
-    /*
-    std::cout << colors.white << "Symbols of cells:" << std::endl;
-    std::cout << colors.blue << static_cast<char>(CellValue::Revealed) << colors.white << " - missed attack;" << std::endl;
-    std::cout << colors.yellow << static_cast<char>(CellValue::ShipPart) << colors.white << " - untouched segment of the ship;" << std::endl;
-    std::cout << colors.red << static_cast<char>(CellValue::Damaged) << colors.white << " - damaged segment of the ship;" << std::endl;
-    std::cout << colors.red << static_cast<char>(CellValue::Destroyed) << colors.white << " - destroyed ship segment." << colors.reset << std::endl;
-    */
 }
-
-
 
 void ConsoleDisplayer::displayFields(Field field1, Field field2) {
     int rows = field1.getRows();
@@ -164,7 +154,7 @@ void ConsoleDisplayer::displaySymbolsOfCells() {
 }
 
 void ConsoleDisplayer::displayAttackOrApplyAbility() {
-    std::cout << "Press 1 to attack\nPress 2 to use ability" << std::endl;
+    std::cout << "Attack - 1\nUse ability - 2\nSave Game - 3\nLoad Game - 4\nQuit Game - 5" << std::endl;
 }
 
 void ConsoleDisplayer::displayInputCoordinateToAttack() {
@@ -196,5 +186,36 @@ void ConsoleDisplayer::displayAddingAbility() {
 }
 
 void ConsoleDisplayer::displayException(std::exception& exception) {
-    std::cerr << "Exception caught: " << exception.what() << std::endl;
+    Colors colors;
+    std::cerr << colors.red << "Exception caught: " << exception.what() << colors.reset << std::endl;
+}
+
+void ConsoleDisplayer::displayGameStart() {
+    std::cout << "Start Game - 1\nSave Game - 2\nLoad Game - 3\nQuit Game - 4" << std::endl;
+}
+
+void ConsoleDisplayer::displayBotWins() {
+    Colors colors;
+    std::cout << colors.red << "Game Over" << colors.reset << std::endl;
+}
+
+void ConsoleDisplayer::displayPlayerWins() {
+    Colors colors;
+    std::cout << colors.yellow << "You have won! Congradulations!" << colors.reset << std::endl;
+}
+
+void ConsoleDisplayer::displaySavingGame() {
+    std::cout << "Saving game..." << std::endl;
+}
+
+void ConsoleDisplayer::displayLoadingGame() {
+    std::cout << "Loading game..." << std::endl;
+}
+
+void ConsoleDisplayer::displayContinueGame() {
+    std::cout << "Do you want to continue the game? Y/n" << std::endl;
+}
+
+void ConsoleDisplayer::displayNewGame() {
+    std::cout << "Do you want to start a new game? y/n" << std::endl;
 }

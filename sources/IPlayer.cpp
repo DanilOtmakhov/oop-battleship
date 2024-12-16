@@ -17,3 +17,11 @@ IPlayer* IPlayer::getEnemyPointer() {
 ShipManager& IPlayer::getShipManager() {
     return shipManager;
 }
+
+void IPlayer::setField(Field& newField) {
+    field = newField;
+}
+
+void IPlayer::setShipManager(ShipManager& newShipManager) {
+    shipManager = newShipManager;
+}

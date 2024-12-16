@@ -1,8 +1,9 @@
 SOURCES = $(wildcard sources/*.cpp)
 OBJECTS = $(patsubst sources/%.cpp,sources/%.o,$(SOURCES))
+NLOHMANN_INCLUDE = ./dependencies
 
 CC = g++
-CFLAGS = -Wall -Wextra -std=c++17 -I/opt/homebrew/include
+CFLAGS = -Wall -Wextra -I$(NLOHMANN_INCLUDE) -std=c++17
 LDFLAGS = -lm
 
 all: battleship

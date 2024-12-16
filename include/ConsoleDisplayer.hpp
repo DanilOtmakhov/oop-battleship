@@ -28,6 +28,13 @@ class ConsoleDisplayer {
         void displayIncorrectChoiсeInput();
         void displayAddingAbility();
         void displayException(std::exception& exception);
+        void displayGameStart();
+        void displayBotWins();
+        void displayPlayerWins();
+        void displaySavingGame();
+        void displayLoadingGame();
+        void displayContinueGame();
+        void displayNewGame();
 };
 
 #endif

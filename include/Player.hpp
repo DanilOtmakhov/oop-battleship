@@ -14,6 +14,7 @@ class Player: public IPlayer {
         void setDamage(int newDamage);
         AbilityManager& getAbilityManager();
         AttackResult attack() override;
+        void setAbilityManager(AbilityManager& newAbilityManager);
 };
 
 #endif

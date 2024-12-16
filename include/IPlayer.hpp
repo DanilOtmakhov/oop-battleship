@@ -18,6 +18,8 @@ class IPlayer {
         IPlayer* getEnemyPointer();
         ShipManager& getShipManager();
         virtual AttackResult attack() = 0;
+        void setField(Field& newField);
+        void setShipManager(ShipManager& newShipManager);
 };
 
 #endif

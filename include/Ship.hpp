@@ -6,6 +6,23 @@
 #include <vector>
 #include "Structs.hpp"
 
+enum class SegmentStatus {
+    Untouched,
+    Damaged,
+    Destroyed
+};
+
+enum class ShipStatus {
+    Untouched,
+    Damaged,
+    Destroyed
+};
+
+struct ShipSegment {
+    Coordinate coordinate;
+    SegmentStatus status = SegmentStatus::Untouched;
+    int health = 2;
+};
 
 class Ship {
     private:
@@ -26,6 +43,10 @@ class Ship {
         Coordinate getSegmentCoordinateByIndex(int index);
         int getSegmentIndexByCoordinate(Coordinate coordinate);
         void handleTakenDamage(int segmentIndex, int damage = 1);
+        int getRemainingSegments();
+        void setRemainingSegments(int numberOfSegments);
+        std::vector<ShipSegment> getSegments();
+        void setSegment(int index, ShipSegment segment);
         Coordinate getCoordinate();
 };
 

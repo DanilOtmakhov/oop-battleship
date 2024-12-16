@@ -19,3 +19,7 @@ AttackResult Player::attack() {
     setDamage(1);
     return attackResult;
 }
+
+void Player::setAbilityManager(AbilityManager& newAbilityManager) {
+    abilityManager = newAbilityManager;
+}

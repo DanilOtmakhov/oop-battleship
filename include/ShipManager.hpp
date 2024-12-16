@@ -15,6 +15,7 @@ class ShipManager {
         std::vector <Ship*> getShips();
         Ship* getShip(int index);
         bool allShipsDestroyed();
+        void addShip(Ship* ship);
 };
 
 #endif

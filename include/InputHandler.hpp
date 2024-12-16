@@ -7,8 +7,9 @@
 
 class InputHandler {
     public:
-        int handleAttackOrApplyAbilityInput();
+        int handleChoise();
         Coordinate handleCoordinateInput();
+        char handleYesOrNo();
 };
 
 #endif

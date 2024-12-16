@@ -86,6 +86,10 @@ int Field::getColumns() {
     return columns;
 }
 
+std::vector <std::vector <FieldCell>> Field::getField() {
+    return field;
+}
+
 void Field::setCellStatus(Coordinate coordinate, CellStatus status) {
     if (!isCoordinateCorrect(coordinate)) {
         throw OutOfBoundsException();
@@ -217,3 +221,39 @@ bool Field::isShipInCell(Coordinate coordinate) {
     }
     return field[coordinate.y][coordinate.x].ship ? true : false;
 }
+
+void Field::placeShipRandomly(Ship* ship) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> disX(0, columns - 1);
+    std::uniform_int_distribution<> disY(0, rows - 1);
+    std::uniform_int_distribution<> disOrientation(0, 1);
+
+    int j = 0;
+    while (true) {
+        int randomX = disX(gen);
+        int randomY = disY(gen);
+        int randOrientation = disOrientation(gen);
+
+        if (randOrientation == 1) {
+            ship->changeOrientaion(true);
+        }
+        try {
+            placeShip(ship, ship->getIsVertical(), {randomX, randomY});
+        } catch (IncorrectShipPlacementException& exception) {
+            j++;
+            if (j >= 30) {
+                throw UnableToPlaceShipsException();
+            }
+            continue;
+        }
+    }
+}
+
+// void Field::revealCells() {
+//     for (int i = 0; i < rows; i++) {
+//         for (int j = 0; j < columns; j++) {
+//             setCellStatus({j, i}, CellStatus::)
+//         }
+//     }
+// }

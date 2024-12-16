@@ -73,6 +73,25 @@ void Ship::handleTakenDamage(int segmentIndex, int damage) {
     }
 }
 
+int Ship::getRemainingSegments() {
+    return remainingSegments;
+}
+
+void Ship::setRemainingSegments(int numberOfSegments) {
+    remainingSegments = numberOfSegments;
+}
+
+std::vector<ShipSegment> Ship::getSegments() {
+    return segments;
+}
+
+void Ship::setSegment(int index, ShipSegment segment) {
+    if (index < 0 || index >= length) {
+        throw std::out_of_range("Invalid segment index!");
+    }
+    segments[index] = segment;
+}
+
 Coordinate Ship::getCoordinate() {
     return segments[0].coordinate;
 }

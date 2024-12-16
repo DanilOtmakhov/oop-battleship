@@ -1,7 +1,7 @@
 #include "../include/InputHandler.hpp"
 
 
-int InputHandler::handleAttackOrApplyAbilityInput() {
+int InputHandler::handleChoise() {
     int choice;
     std::cin >> choice;
     return choice;
@@ -17,4 +17,11 @@ Coordinate InputHandler::handleCoordinateInput() {
     int x = x_char - 'A';
 
     return Coordinate{x, y - 1};
+}
+
+char InputHandler::handleYesOrNo() {
+    char choise;
+    std::cin >> choise;
+
+    return choise;
 }
