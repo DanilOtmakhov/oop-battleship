@@ -28,6 +28,8 @@ class Game {
         void handleExceptions();
         void resetBot();
         void resetGame();
+        void saveGame();
+        void loadGame();
 };
 
 #endif

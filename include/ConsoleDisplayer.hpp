@@ -25,7 +25,6 @@ class ConsoleDisplayer {
         void displayInputCoordinateForScanner();
         void displayScannerSuccess();
         void displayScannerFailure();
-        void displayIncorrectChoiсeInput();
         void displayAddingAbility();
         void displayException(std::exception& exception);
         void displayGameStart();
@@ -35,6 +34,8 @@ class ConsoleDisplayer {
         void displayLoadingGame();
         void displayContinueGame();
         void displayNewGame();
+        void displayInfo();
+        void displayIncorrectCommandInput();
 };
 
 #endif

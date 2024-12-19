@@ -17,6 +17,7 @@ class Deserialization {
         void from_json(Field& field, std::string key);
         void from_json(ShipManager& manager, std::string key);
         void from_json(AbilityManager& manager, std::string key);
+        void from_json(std::map<char, Command>& newCommands);
 };
 
 #endif

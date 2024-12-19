@@ -177,8 +177,9 @@ void ConsoleDisplayer::displayScannerFailure() {
     std::cout << "Ship is not found!" << std::endl;
 }
 
-void ConsoleDisplayer::displayIncorrectChoiсeInput() {
-    std::cout << "Wrong choice, try again!" << std::endl;
+void ConsoleDisplayer::displayIncorrectCommandInput() {
+    std::cout << "Wrong command, try again!" << std::endl;
+    displayInfo();
 }
 
 void ConsoleDisplayer::displayAddingAbility() {
@@ -218,4 +219,8 @@ void ConsoleDisplayer::displayContinueGame() {
 
 void ConsoleDisplayer::displayNewGame() {
     std::cout << "Do you want to start a new game? y/n" << std::endl;
+}
+
+void ConsoleDisplayer::displayInfo() {
+    std::cout << "Push i to print info, a to attack, b to use ability, l to load, s to save, q to quit." << std::endl;
 }

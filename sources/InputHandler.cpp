@@ -1,10 +1,24 @@
 #include "../include/InputHandler.hpp"
 
+InputHandler::InputHandler() {
+    commands = {
+        {'i', Command::info},
+        {'g', Command::start},
+        {'a', Command::attack},
+        {'b', Command::ability},
+        {'l', Command::load},
+        {'s', Command::save},
+        {'q', Command::quit}
+    };
+}
 
-int InputHandler::handleChoise() {
-    int choice;
-    std::cin >> choice;
-    return choice;
+Command InputHandler::handleCommandInput() {
+    std::string line;
+    std::cin >> line;
+    if (line.size() == 1 && this->commands.find(line[0]) != this->commands.end()) {
+        return commands[line[0]];
+    }
+    return Command::info;
 }
 
 Coordinate InputHandler::handleCoordinateInput() {
@@ -24,4 +38,8 @@ char InputHandler::handleYesOrNo() {
     std::cin >> choise;
 
     return choise;
+}
+
+void InputHandler::setCommands(std::map <char, Command> newCommands) {
+    commands = newCommands;
 }

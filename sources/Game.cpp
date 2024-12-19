@@ -15,69 +15,61 @@ void Game::startGame() {
 
 void Game::initializeGame() {
     displayer.displayGameStart();
-    int choise = inputHandler.handleChoise();
-    switch (choise) {
-        case 1:
+    Command command = inputHandler.handleCommandInput();
+    switch (command) {
+        case Command::info:
+            displayer.displayInfo();
+            break;
+        case Command::start:
             startGame();
             break;
-        case 2:
+        case Command::save:
             displayer.displaySavingGame();
-            gameState.saveGame("/Users/danilotmakhov/Desktop/oop/battleship/saveFile.json");
-            //initializeGame();
+            saveGame();
             startGame();
             break;
-        case 3:
+        case Command::load:
             displayer.displayLoadingGame();
-            try {
-                gameState.loadGame("/Users/danilotmakhov/Desktop/oop/battleship/saveFile.json");
-            } catch (SaveFileHashMismatchException(exception)) {
-                displayer.displayException(exception);
-            } catch (nlohmann::json::parse_error(exception)) {
-                displayer.displayException(exception);
-            }
+            loadGame();
             displayer.displayFields(player.getField(), bot.getField());
             initializeGame();
             break;
-        case 4:
+        case Command::quit:
             gameEnded = true;
             break;
         default:
-            displayer.displayIncorrectChoiсeInput();
+            displayer.displayIncorrectCommandInput();
             break;
     }
 }
 
 void Game::playerTurn() {
     displayer.displayAttackOrApplyAbility();
-    int playerChoice = inputHandler.handleChoise();
+    Command command = inputHandler.handleCommandInput();
     try {
-        switch (playerChoice) {
-            case 1:
+        switch (command) {
+            case Command::attack:
                 handlePlayerAttack();
                 break;
-            case 2:
+            case Command::ability:
                 handlePlayerAbility();
                 break;
-            case 3:
+            case Command::save:
                 displayer.displaySavingGame();
-                gameState.saveGame("/Users/danilotmakhov/Desktop/oop/battleship/saveFile.json");
+                saveGame();
                 playerTurn();
                 break;
-            case 4:
+            case Command::load:
                 displayer.displayLoadingGame();
-                try {
-                    gameState.loadGame("/Users/danilotmakhov/Desktop/oop/battleship/saveFile.json");
-                } catch (SaveFileHashMismatchException(exception)) {
-                    displayer.displayException(exception);
-                }
+                loadGame();
                 displayer.displayFields(player.getField(), bot.getField());
                 playerTurn();
                 break;
-            case 5:
+            case Command::quit:
                 gameEnded = true;
                 break;
             default:
-                displayer.displayIncorrectChoiсeInput();
+                displayer.displayIncorrectCommandInput();
                 break;
         }
     } catch (...) {
@@ -152,7 +144,7 @@ void Game::checkGameOver() {
                     startGame();
                     break;
                 default:
-                    displayer.displayIncorrectChoiсeInput();
+                    displayer.displayIncorrectCommandInput();
                     break;
             }
         } else {
@@ -173,7 +165,7 @@ void Game::checkGameOver() {
                     startGame();
                     break;
                 default:
-                    displayer.displayIncorrectChoiсeInput();
+                    displayer.displayIncorrectCommandInput();
                     break;
             }
         }
@@ -216,4 +208,18 @@ void Game::resetGame() {
     player.setField(newField);
     player.setShipManager(newShips);
     player.setAbilityManager(newAbilities);
+}
+
+void Game::saveGame() {
+    gameState.saveGame("/Users/danilotmakhov/Desktop/oop/battleship/saveFile.json");
+}
+
+void Game::loadGame() {
+    try {
+        gameState.loadGame("/Users/danilotmakhov/Desktop/oop/battleship/saveFile.json");
+    } catch (SaveFileHashMismatchException(exception)) {
+        displayer.displayException(exception);
+    } catch (nlohmann::json::parse_error(exception)) {
+        displayer.displayException(exception);
+    }
 }
