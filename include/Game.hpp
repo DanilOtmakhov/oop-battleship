@@ -14,22 +14,20 @@ class Game {
         Bot bot;
         GameState gameState;
         bool gameEnded = false;
-        ConsoleDisplayer displayer = ConsoleDisplayer();
-        InputHandler inputHandler = InputHandler();
+        ConsoleDisplayer displayer;
     public:
-        Game(Player player, Bot bot, GameState gameState);
-        void startGame();
-        void initializeGame();
-        void playerTurn();
+        Game(Player player, Bot bot, GameState gameState, ConsoleDisplayer displayer);
         void botTurn();
         void handlePlayerAttack();
         void handlePlayerAbility();
-        void checkGameOver();
         void handleExceptions();
         void resetBot();
         void resetGame();
         void saveGame();
         void loadGame();
+        GameState& getGameState();
+        bool isGameOver();
+        bool isPlayerDefeated();
 };
 
 #endif

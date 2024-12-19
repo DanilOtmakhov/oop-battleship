@@ -1,4 +1,4 @@
-#include "../include/Game.hpp"
+#include "../include/GameController.hpp"
 
 int main() {
     // Initialize Player And Bot
@@ -47,8 +47,12 @@ int main() {
     //testing JSON
     GameState gs = GameState(player, bot);
 
-    Game game = Game(player, bot, gs);
-    game.initializeGame();
+    ConsoleDisplayer displayer = ConsoleDisplayer();
+    InputHandler inputHandler = InputHandler();
+    Game game = Game(player, bot, gs, displayer);
+    //game.initializeGame();
+    GameController<InputHandler, ConsoleDisplayer> controller = GameController<InputHandler, ConsoleDisplayer>(game, inputHandler, displayer);
+    controller.initializeGame();
 
     return 0;
 }

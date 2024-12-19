@@ -1,82 +1,6 @@
 #include "../include/Game.hpp"
 
-Game::Game(Player player, Bot bot, GameState gameState) : player(player), bot(bot), gameState(gameState) {}
-
-void Game::startGame() {
-    displayer.displayFields(player.getField(), bot.getField());
-    while (!gameEnded) {
-        playerTurn();
-        checkGameOver();
-        if (gameEnded) break;
-        botTurn();
-        checkGameOver();
-    }
-}
-
-void Game::initializeGame() {
-    displayer.displayGameStart();
-    Command command = inputHandler.handleCommandInput();
-    switch (command) {
-        case Command::info:
-            displayer.displayInfo();
-            break;
-        case Command::start:
-            startGame();
-            break;
-        case Command::save:
-            displayer.displaySavingGame();
-            saveGame();
-            startGame();
-            break;
-        case Command::load:
-            displayer.displayLoadingGame();
-            loadGame();
-            displayer.displayFields(player.getField(), bot.getField());
-            initializeGame();
-            break;
-        case Command::quit:
-            gameEnded = true;
-            break;
-        default:
-            displayer.displayIncorrectCommandInput();
-            break;
-    }
-}
-
-void Game::playerTurn() {
-    displayer.displayAttackOrApplyAbility();
-    Command command = inputHandler.handleCommandInput();
-    try {
-        switch (command) {
-            case Command::attack:
-                handlePlayerAttack();
-                break;
-            case Command::ability:
-                handlePlayerAbility();
-                break;
-            case Command::save:
-                displayer.displaySavingGame();
-                saveGame();
-                playerTurn();
-                break;
-            case Command::load:
-                displayer.displayLoadingGame();
-                loadGame();
-                displayer.displayFields(player.getField(), bot.getField());
-                playerTurn();
-                break;
-            case Command::quit:
-                gameEnded = true;
-                break;
-            default:
-                displayer.displayIncorrectCommandInput();
-                break;
-        }
-    } catch (...) {
-        handleExceptions();
-        playerTurn();
-    }
-}
+Game::Game(Player player, Bot bot, GameState gameState, ConsoleDisplayer displayer) : player(player), bot(bot), gameState(gameState), displayer(displayer) {}
 
 void Game::botTurn() {
     try {
@@ -120,55 +44,6 @@ void Game::handlePlayerAbility() {
             break;
         default:
             break;
-    }
-}
-
-void Game::checkGameOver() {
-    if (bot.getShipManager().allShipsDestroyed() || player.getShipManager().allShipsDestroyed()) {
-        gameEnded = true;
-        if (player.getShipManager().allShipsDestroyed()) {
-            displayer.displayFields(player.getField(), bot.getField());
-            displayer.displayBotWins();
-
-            displayer.displayNewGame();
-            char choise = inputHandler.handleYesOrNo();
-            switch (choise) {
-                case 'N':
-                case 'n':
-                    gameEnded = true;
-                    break;
-                case 'Y':
-                case 'y':
-                    gameEnded = false;
-                    resetGame();
-                    startGame();
-                    break;
-                default:
-                    displayer.displayIncorrectCommandInput();
-                    break;
-            }
-        } else {
-            displayer.displayFields(player.getField(), bot.getField());
-            displayer.displayPlayerWins();
-
-            displayer.displayContinueGame();
-            char choise = inputHandler.handleYesOrNo();
-            switch (choise) {
-                case 'N':
-                case 'n':
-                    gameEnded = true;
-                    break;
-                case 'Y':
-                case 'y':
-                    gameEnded = false;
-                    resetBot();
-                    startGame();
-                    break;
-                default:
-                    displayer.displayIncorrectCommandInput();
-                    break;
-            }
-        }
     }
 }
 
@@ -222,4 +97,16 @@ void Game::loadGame() {
     } catch (nlohmann::json::parse_error(exception)) {
         displayer.displayException(exception);
     }
+}
+
+GameState& Game::getGameState() {
+    return gameState;
+}
+
+bool Game::isGameOver() {
+        return bot.getShipManager().allShipsDestroyed() || player.getShipManager().allShipsDestroyed();
+    }
+
+bool Game::isPlayerDefeated() {
+    return player.getShipManager().allShipsDestroyed();
 }
