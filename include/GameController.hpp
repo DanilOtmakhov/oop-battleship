@@ -16,11 +16,11 @@ public:
         : game(game), input(input), output(output) {}
 
     void initializeGame() {
-        output.displayGameStart();
+        output.displayGameStartInfo(input.getCommands());
         Command command = input.handleCommandInput();
         switch (command) {
             case Command::info:
-                output.displayInfo();
+                output.displayInfo(input.getCommands());
                 initializeGame();
                 break;
             case Command::start:
@@ -59,10 +59,12 @@ public:
     }
 
     void handlePlayerTurn() {
-        output.displayAttackOrApplyAbility();
+        output.displayInfo(input.getCommands());
         Command command = input.handleCommandInput();
         try {
             switch (command) {
+                case Command::info:
+                    output.displayInfo(input.getCommands());
                 case Command::attack:
                     game.handlePlayerAttack();
                     break;

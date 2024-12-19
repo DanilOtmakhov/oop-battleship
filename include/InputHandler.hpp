@@ -16,6 +16,7 @@ class InputHandler {
         Coordinate handleCoordinateInput();
         char handleYesOrNo();
         void setCommands(std::map <char, Command> newCommands);
+        std::map <char, Command> getCommands();
 };
 
 #endif

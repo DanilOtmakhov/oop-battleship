@@ -153,10 +153,6 @@ void ConsoleDisplayer::displaySymbolsOfCells() {
     std::cout << colors.red << static_cast<char>(CellValue::Destroyed) << colors.white << " - destroyed ship segment." << colors.reset << std::endl;
 }
 
-void ConsoleDisplayer::displayAttackOrApplyAbility() {
-    std::cout << "Attack - 1\nUse ability - 2\nSave Game - 3\nLoad Game - 4\nQuit Game - 5" << std::endl;
-}
-
 void ConsoleDisplayer::displayInputCoordinateToAttack() {
     std::cout << "Enter coordinates for attack:" << std::endl;
 }
@@ -179,7 +175,6 @@ void ConsoleDisplayer::displayScannerFailure() {
 
 void ConsoleDisplayer::displayIncorrectCommandInput() {
     std::cout << "Wrong command, try again!" << std::endl;
-    displayInfo();
 }
 
 void ConsoleDisplayer::displayAddingAbility() {
@@ -189,10 +184,6 @@ void ConsoleDisplayer::displayAddingAbility() {
 void ConsoleDisplayer::displayException(std::exception& exception) {
     Colors colors;
     std::cerr << colors.red << "Exception caught: " << exception.what() << colors.reset << std::endl;
-}
-
-void ConsoleDisplayer::displayGameStart() {
-    std::cout << "Start Game - 1\nSave Game - 2\nLoad Game - 3\nQuit Game - 4" << std::endl;
 }
 
 void ConsoleDisplayer::displayBotWins() {
@@ -221,6 +212,39 @@ void ConsoleDisplayer::displayNewGame() {
     std::cout << "Do you want to start a new game? y/n" << std::endl;
 }
 
-void ConsoleDisplayer::displayInfo() {
-    std::cout << "Push i to print info, a to attack, b to use ability, l to load, s to save, q to quit." << std::endl;
+void ConsoleDisplayer::displayInfo(const std::map<char, Command>& commands) {
+    std::cout << "Available commands:" << std::endl;
+    for (const auto& [key, command] : commands) {
+        std::string commandName;
+        switch (command) {
+            case Command::info:    commandName = "Info";     break;
+            case Command::start:   commandName = "Start Game";   break;
+            case Command::attack:  commandName = "Attack";   break;
+            case Command::ability: commandName = "Ability";  break;
+            case Command::load:    commandName = "Load Game";    break;
+            case Command::save:    commandName = "Save Game";    break;
+            case Command::quit:    commandName = "Quit Game";    break;
+        }
+        if (command == Command::start) { continue; }
+        std::cout << commandName << " - " << key << std::endl;
+    }
+}
+
+
+void ConsoleDisplayer::displayGameStartInfo(const std::map<char, Command>& commands) {
+    std::cout << "Available commands:" << std::endl;
+    for (const auto& [key, command] : commands) {
+        std::string commandName;
+        switch (command) {
+            case Command::info:    commandName = "Info";     break;
+            case Command::start:   commandName = "Start Game";   break;
+            case Command::attack:  commandName = "Attack";   break;
+            case Command::ability: commandName = "Ability";  break;
+            case Command::load:    commandName = "Load Game";    break;
+            case Command::save:    commandName = "Save Game";    break;
+            case Command::quit:    commandName = "Quit Game";    break;
+        }
+        if (command == Command::attack || command == Command::ability) { continue; }
+        std::cout << commandName << " - " << key << std::endl;
+    }
 }

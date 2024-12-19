@@ -2,7 +2,9 @@
 #define CONSOLE_DISPLAYER_HPP
 
 #include <iostream>
+#include <map>
 #include "Field.hpp"
+#include "Command.hpp"
 
 
 class ConsoleDisplayer {
@@ -18,7 +20,6 @@ class ConsoleDisplayer {
     public:
         void displayField(Field field, bool isEnemy);
         void displayFields(Field field, Field field2);
-        void displayAttackOrApplyAbility();
         void displayInputCoordinateToAttack();
         void displaySymbolsOfCells();
         void displayDoubleDamage();
@@ -27,14 +28,14 @@ class ConsoleDisplayer {
         void displayScannerFailure();
         void displayAddingAbility();
         void displayException(std::exception& exception);
-        void displayGameStart();
+        void displayGameStartInfo(const std::map<char, Command>& commands);
         void displayBotWins();
         void displayPlayerWins();
         void displaySavingGame();
         void displayLoadingGame();
         void displayContinueGame();
         void displayNewGame();
-        void displayInfo();
+        void displayInfo(const std::map<char, Command>& commands);
         void displayIncorrectCommandInput();
 };
 

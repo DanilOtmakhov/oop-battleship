@@ -43,3 +43,7 @@ char InputHandler::handleYesOrNo() {
 void InputHandler::setCommands(std::map <char, Command> newCommands) {
     commands = newCommands;
 }
+
+std::map <char, Command> InputHandler::getCommands() {
+    return commands;
+}
