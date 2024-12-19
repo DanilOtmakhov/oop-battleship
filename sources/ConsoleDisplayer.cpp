@@ -209,7 +209,7 @@ void ConsoleDisplayer::displayContinueGame() {
 }
 
 void ConsoleDisplayer::displayNewGame() {
-    std::cout << "Do you want to start a new game? y/n" << std::endl;
+    std::cout << "Do you want to start a new game? Y/n" << std::endl;
 }
 
 void ConsoleDisplayer::displayInfo(const std::map<char, Command>& commands) {
@@ -220,7 +220,7 @@ void ConsoleDisplayer::displayInfo(const std::map<char, Command>& commands) {
             case Command::info:    commandName = "Info";     break;
             case Command::start:   commandName = "Start Game";   break;
             case Command::attack:  commandName = "Attack";   break;
-            case Command::ability: commandName = "Ability";  break;
+            case Command::ability: commandName = "Use Ability";  break;
             case Command::load:    commandName = "Load Game";    break;
             case Command::save:    commandName = "Save Game";    break;
             case Command::quit:    commandName = "Quit Game";    break;
@@ -239,7 +239,7 @@ void ConsoleDisplayer::displayGameStartInfo(const std::map<char, Command>& comma
             case Command::info:    commandName = "Info";     break;
             case Command::start:   commandName = "Start Game";   break;
             case Command::attack:  commandName = "Attack";   break;
-            case Command::ability: commandName = "Ability";  break;
+            case Command::ability: commandName = "Use Ability";  break;
             case Command::load:    commandName = "Load Game";    break;
             case Command::save:    commandName = "Save Game";    break;
             case Command::quit:    commandName = "Quit Game";    break;

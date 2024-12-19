@@ -99,7 +99,7 @@ public:
 
     void handleBotTurn() {
         game.botTurn();
-        output.displayFields(game.getGameState().getPlayer().getField(), game.getGameState().getBot().getField());
+        //output.displayFields(game.getGameState().getPlayer().getField(), game.getGameState().getBot().getField());
     }
 
     void checkGameOver() {

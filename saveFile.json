@@ -1,0 +1,1565 @@
+{
+    "data": {
+        "botField": {
+            "columns": 10,
+            "field": [
+                {
+                    "status": "Revealed",
+                    "value": "D",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 1,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 0,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 1,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 3,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 4,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 5,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 0,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 1,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 2,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 0,
+                    "y": 3
+                },
+                {
+                    "status": "Revealed",
+                    "value": "D",
+                    "x": 1,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 2,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 0,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 1,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": "*",
+                    "x": 2,
+                    "y": 4
+                },
+                {
+                    "status": "Revealed",
+                    "value": "x",
+                    "x": 3,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 4,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 7,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 0,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 7,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 0,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 2,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 3,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 8,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 0,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 7,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 0,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 4,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 7,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 0,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 7,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 8,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 9
+                }
+            ],
+            "rows": 10
+        },
+        "botShipManager": [
+            {
+                "isVertical": true,
+                "length": 4,
+                "remainingSegments": 4,
+                "segments": [
+                    {
+                        "health": 1,
+                        "x": 7,
+                        "y": 0
+                    },
+                    {
+                        "health": 2,
+                        "x": 7,
+                        "y": 1
+                    },
+                    {
+                        "health": 2,
+                        "x": 7,
+                        "y": 2
+                    },
+                    {
+                        "health": 2,
+                        "x": 7,
+                        "y": 3
+                    }
+                ]
+            },
+            {
+                "isVertical": true,
+                "length": 3,
+                "remainingSegments": 3,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 0,
+                        "y": 7
+                    },
+                    {
+                        "health": 2,
+                        "x": 0,
+                        "y": 8
+                    },
+                    {
+                        "health": 2,
+                        "x": 0,
+                        "y": 9
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 3,
+                "remainingSegments": 3,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 3,
+                        "y": 1
+                    },
+                    {
+                        "health": 2,
+                        "x": 4,
+                        "y": 1
+                    },
+                    {
+                        "health": 2,
+                        "x": 5,
+                        "y": 1
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 2,
+                "remainingSegments": 2,
+                "segments": [
+                    {
+                        "health": 1,
+                        "x": 3,
+                        "y": 4
+                    },
+                    {
+                        "health": 2,
+                        "x": 4,
+                        "y": 4
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 2,
+                "remainingSegments": 2,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 2,
+                        "y": 6
+                    },
+                    {
+                        "health": 2,
+                        "x": 3,
+                        "y": 6
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 2,
+                "remainingSegments": 2,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 7,
+                        "y": 6
+                    },
+                    {
+                        "health": 2,
+                        "x": 8,
+                        "y": 6
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 1,
+                "remainingSegments": 1,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 8,
+                        "y": 9
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 1,
+                "remainingSegments": 1,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 4,
+                        "y": 8
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 1,
+                "remainingSegments": 0,
+                "segments": [
+                    {
+                        "health": 0,
+                        "x": 1,
+                        "y": 3
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 1,
+                "remainingSegments": 0,
+                "segments": [
+                    {
+                        "health": 0,
+                        "x": 0,
+                        "y": 0
+                    }
+                ]
+            }
+        ],
+        "playerAbilityManager": [
+            "Scanner",
+            "DoubleDamage"
+        ],
+        "playerField": {
+            "columns": 10,
+            "field": [
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 0,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 0
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 0,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 3,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 4,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 5,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 1
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 0,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 2
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 0,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 1,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 3
+                },
+                {
+                    "status": "Revealed",
+                    "value": "*",
+                    "x": 8,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 3
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 0,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 4
+                },
+                {
+                    "status": "Revealed",
+                    "value": "*",
+                    "x": 2,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 3,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 4,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 7,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 4
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 4
+                },
+                {
+                    "status": "Revealed",
+                    "value": "*",
+                    "x": 0,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 7,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 5
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 0,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 2,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 3,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 7,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 8,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 6
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 0,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 7
+                },
+                {
+                    "status": "Revealed",
+                    "value": "*",
+                    "x": 3,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 7,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 7
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 0,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 8
+                },
+                {
+                    "status": "Revealed",
+                    "value": "*",
+                    "x": 3,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 4,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 7,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 8,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 8
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 0,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 1,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 2,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 3,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 4,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 5,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 6,
+                    "y": 9
+                },
+                {
+                    "status": "Revealed",
+                    "value": "*",
+                    "x": 7,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": "S",
+                    "x": 8,
+                    "y": 9
+                },
+                {
+                    "status": "Hidden",
+                    "value": " ",
+                    "x": 9,
+                    "y": 9
+                }
+            ],
+            "rows": 10
+        },
+        "playerShipManager": [
+            {
+                "isVertical": true,
+                "length": 4,
+                "remainingSegments": 4,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 7,
+                        "y": 0
+                    },
+                    {
+                        "health": 2,
+                        "x": 7,
+                        "y": 1
+                    },
+                    {
+                        "health": 2,
+                        "x": 7,
+                        "y": 2
+                    },
+                    {
+                        "health": 2,
+                        "x": 7,
+                        "y": 3
+                    }
+                ]
+            },
+            {
+                "isVertical": true,
+                "length": 3,
+                "remainingSegments": 3,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 0,
+                        "y": 7
+                    },
+                    {
+                        "health": 2,
+                        "x": 0,
+                        "y": 8
+                    },
+                    {
+                        "health": 2,
+                        "x": 0,
+                        "y": 9
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 3,
+                "remainingSegments": 3,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 3,
+                        "y": 1
+                    },
+                    {
+                        "health": 2,
+                        "x": 4,
+                        "y": 1
+                    },
+                    {
+                        "health": 2,
+                        "x": 5,
+                        "y": 1
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 2,
+                "remainingSegments": 2,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 3,
+                        "y": 4
+                    },
+                    {
+                        "health": 2,
+                        "x": 4,
+                        "y": 4
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 2,
+                "remainingSegments": 2,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 2,
+                        "y": 6
+                    },
+                    {
+                        "health": 2,
+                        "x": 3,
+                        "y": 6
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 2,
+                "remainingSegments": 2,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 7,
+                        "y": 6
+                    },
+                    {
+                        "health": 2,
+                        "x": 8,
+                        "y": 6
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 1,
+                "remainingSegments": 1,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 8,
+                        "y": 9
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 1,
+                "remainingSegments": 1,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 4,
+                        "y": 8
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 1,
+                "remainingSegments": 1,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 1,
+                        "y": 3
+                    }
+                ]
+            },
+            {
+                "isVertical": false,
+                "length": 1,
+                "remainingSegments": 1,
+                "segments": [
+                    {
+                        "health": 2,
+                        "x": 0,
+                        "y": 0
+                    }
+                ]
+            }
+        ]
+    },
+    "hash": "a1340cefd1226a36"
+}

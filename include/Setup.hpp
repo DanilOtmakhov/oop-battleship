@@ -12,7 +12,7 @@ class Setup {
         Setup(InputHandler& inputHandler) : inputHandler(inputHandler) {};
         void deserializeSetup() {
             nlohmann::json j;
-            FileWrapper fileWrapper = FileWrapper("/Users/danilotmakhov/Desktop/oop/battleship/setup.json");
+            FileWrapper fileWrapper = FileWrapper("/Users/danilotmakhov/Documents/studies/oop/battleship/setup.json");
             std::map<char, Command> newCommands;
             fileWrapper.read(j);
             Deserialization(j).from_json(newCommands);

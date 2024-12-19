@@ -86,12 +86,12 @@ void Game::resetGame() {
 }
 
 void Game::saveGame() {
-    gameState.saveGame("/Users/danilotmakhov/Desktop/oop/battleship/saveFile.json");
+    gameState.saveGame("/Users/danilotmakhov/Documents/studies/oop/battleship/saveFile.json");
 }
 
 void Game::loadGame() {
     try {
-        gameState.loadGame("/Users/danilotmakhov/Desktop/oop/battleship/saveFile.json");
+        gameState.loadGame("/Users/danilotmakhov/Documents/studies/oop/battleship/saveFile.json");
     } catch (SaveFileHashMismatchException(exception)) {
         displayer.displayException(exception);
     } catch (nlohmann::json::parse_error(exception)) {
