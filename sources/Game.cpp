@@ -5,10 +5,12 @@ Game::Game(Player player, Bot bot, GameState gameState, ConsoleDisplayer display
 void Game::botTurn() {
     try {
         bot.attack();
-        displayer.displayFields(player.getField(), bot.getField());
     } catch (...) {
         handleExceptions();
         botTurn();
+    }
+    for (const auto& observer : this->observers) {
+        observer->roundCompleted();
     }
 }
 
@@ -23,6 +25,9 @@ void Game::handlePlayerAttack() {
 
 void Game::handlePlayerAbility() {
     player.getAbilityManager().checkAbilitiesEmpty();
+    for (const auto& observer : this->observers) {
+        observer->abilityUsed();
+    }
     Ability* currentAbility = player.getAbilityManager().getAbility();
     if (currentAbility->getAbilityType() == AbilityType::Scanner) {
         displayer.displayInputCoordinateForScanner();
@@ -87,6 +92,9 @@ void Game::resetGame() {
 
 void Game::saveGame() {
     gameState.saveGame("/Users/danilotmakhov/Documents/studies/oop/battleship/saveFile.json");
+    for (const auto& observer : this->observers) {
+        observer->saveSuccess();
+    }
 }
 
 void Game::loadGame() {
@@ -104,9 +112,24 @@ GameState& Game::getGameState() {
 }
 
 bool Game::isGameOver() {
+        if (bot.getShipManager().allShipsDestroyed()) {
+            for (const auto& observer : this->observers) {
+                observer->playerWin();
+            }
+        } else if (player.getShipManager().allShipsDestroyed()) {
+            for (const auto& observer : this->observers) {
+                observer->botWin();
+            }
+        }
         return bot.getShipManager().allShipsDestroyed() || player.getShipManager().allShipsDestroyed();
     }
 
 bool Game::isPlayerDefeated() {
     return player.getShipManager().allShipsDestroyed();
+}
+
+void Game::addObserver(GameObserver* observer) {
+    if (observer != nullptr) {
+        observers.push_back(observer);
+    }
 }

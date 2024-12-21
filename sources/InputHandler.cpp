@@ -34,10 +34,10 @@ Coordinate InputHandler::handleCoordinateInput() {
 }
 
 char InputHandler::handleYesOrNo() {
-    char choise;
-    std::cin >> choise;
+    char choice;
+    std::cin >> choice;
 
-    return choise;
+    return choice;
 }
 
 void InputHandler::setCommands(std::map <char, Command> newCommands) {

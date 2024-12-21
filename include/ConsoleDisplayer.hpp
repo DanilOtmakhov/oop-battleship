@@ -37,6 +37,10 @@ class ConsoleDisplayer {
         void displayNewGame();
         void displayInfo(const std::map<char, Command>& commands);
         void displayIncorrectCommandInput();
+        void displayAbilityUsed();
+        void displaySaveFinished();
+        void displayLoadFinished();
+        void displayRoundCompleted();
 };
 
 #endif

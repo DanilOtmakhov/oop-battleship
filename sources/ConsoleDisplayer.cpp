@@ -230,7 +230,6 @@ void ConsoleDisplayer::displayInfo(const std::map<char, Command>& commands) {
     }
 }
 
-
 void ConsoleDisplayer::displayGameStartInfo(const std::map<char, Command>& commands) {
     std::cout << "Available commands:" << std::endl;
     for (const auto& [key, command] : commands) {
@@ -247,4 +246,20 @@ void ConsoleDisplayer::displayGameStartInfo(const std::map<char, Command>& comma
         if (command == Command::attack || command == Command::ability) { continue; }
         std::cout << commandName << " - " << key << std::endl;
     }
+}
+
+void ConsoleDisplayer::displayAbilityUsed() {
+    std::cout << "You used the ability." << std::endl;
+}
+
+void ConsoleDisplayer::displaySaveFinished() {
+    std::cout << "The game has been saved successfully." << std::endl;
+}
+
+void ConsoleDisplayer::displayLoadFinished() {
+    std::cout << "The download of the game has been completed successfully." << std::endl;
+}
+
+void ConsoleDisplayer::displayRoundCompleted() {
+    std::cout << "The game round is completed." << std::endl;
 }

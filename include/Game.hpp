@@ -7,14 +7,15 @@
 #include "ConsoleDisplayer.hpp"
 #include "InputHandler.hpp"
 #include "GameState.hpp"
+#include "GameObserver.hpp"
 
 class Game {
     private:
         Player player;
         Bot bot;
-        GameState gameState;
-        bool gameEnded = false;
+        GameState gameState; 
         ConsoleDisplayer displayer;
+        std::vector <GameObserver*> observers;
     public:
         Game(Player player, Bot bot, GameState gameState, ConsoleDisplayer displayer);
         void botTurn();
@@ -28,6 +29,7 @@ class Game {
         GameState& getGameState();
         bool isGameOver();
         bool isPlayerDefeated();
+        void addObserver(GameObserver* observer);
 };
 
 #endif

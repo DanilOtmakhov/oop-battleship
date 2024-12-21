@@ -16,7 +16,7 @@ bool Ship::getIsVertical(){
     return isVertical;
 }
 
-void Ship::changeOrientaion(bool toVertical) {
+void Ship::changeOrientation(bool toVertical) {
     isVertical = toVertical;
 }
 

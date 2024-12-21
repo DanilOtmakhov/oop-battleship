@@ -235,25 +235,17 @@ void Field::placeShipRandomly(Ship* ship) {
         int randomY = disY(gen);
         int randOrientation = disOrientation(gen);
 
-        if (randOrientation == 1) {
-            ship->changeOrientaion(true);
-        }
+        bool isVertical = (randOrientation == 1);
+        ship->changeOrientation(isVertical);
+
         try {
-            placeShip(ship, ship->getIsVertical(), {randomX, randomY});
+            placeShip(ship, isVertical, {randomX, randomY});
+            return;
         } catch (IncorrectShipPlacementException& exception) {
             j++;
-            if (j >= 30) {
+            if (j >= 100) {
                 throw UnableToPlaceShipsException();
             }
-            continue;
         }
     }
 }
-
-// void Field::revealCells() {
-//     for (int i = 0; i < rows; i++) {
-//         for (int j = 0; j < columns; j++) {
-//             setCellStatus({j, i}, CellStatus::)
-//         }
-//     }
-// }

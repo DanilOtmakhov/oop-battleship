@@ -131,7 +131,7 @@ void Deserialization::from_json(AbilityManager& manager, std::string key) {
 }
 
 void Deserialization::from_json(std::map<char, Command>& newCommands) {
-    const auto& jc = j.at("commands");
+    const auto& jc = j.at("settings");
     std::vector<int> values;
 
     for (const auto& pair : jc.items()) {
@@ -141,7 +141,7 @@ void Deserialization::from_json(std::map<char, Command>& newCommands) {
         }
 
         int value = pair.value();
-        if (value < 0 || value > 5) {
+        if (value < 0 || value > 6) {
             throw std::invalid_argument("Incorrect number of commands.");
         }
         values.push_back(value);
