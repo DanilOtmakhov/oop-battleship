@@ -51,7 +51,7 @@ class GameController {
             output.displayFields(game.getGameState().getPlayer().getField(), game.getGameState().getBot().getField());
             while (!gameEnded) {
                 handlePlayerTurn();
-                checkGameOver();
+                checkGameOver();h
                 if (gameEnded) break;
                 handleBotTurn();
                 checkGameOver();
@@ -106,8 +106,6 @@ class GameController {
                 gameEnded = true;
                 if (game.isPlayerDefeated()) {
                     output.displayFields(game.getGameState().getPlayer().getField(), game.getGameState().getBot().getField());
-                    //output.displayBotWins();
-
                     output.displayNewGame();
                     char choice = input.handleYesOrNo();
                     switch (choice) {
@@ -127,8 +125,6 @@ class GameController {
                     }
                 } else {
                     output.displayFields(game.getGameState().getPlayer().getField(), game.getGameState().getBot().getField());
-                    //output.displayPlayerWins();
-
                     output.displayContinueGame();
                     char choice = input.handleYesOrNo();
                     switch (choice) {

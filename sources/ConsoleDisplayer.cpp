@@ -42,9 +42,9 @@ void ConsoleDisplayer::displayField(Field field, bool isEnemy) {
     std::cout << colors.white << "+" << colors.reset << std::endl;
 }
 
-void ConsoleDisplayer::displayFields(Field field1, Field field2) {
-    int rows = field1.getRows();
-    int columns = field1.getColumns();
+void ConsoleDisplayer::displayFields(Field field, Field enemyField) {
+    int rows = field.getRows();
+    int columns = field.getColumns();
     Colors colors;
     std::cout << "    ";
     for (int j = 0; j < columns; j++) {
@@ -84,7 +84,7 @@ void ConsoleDisplayer::displayFields(Field field1, Field field2) {
         }
         for (int k = 0; k < columns; k++) {
             std::cout << colors.white << "|";
-            CellValue value1 = field1.getCellValue({k, i});
+            CellValue value1 = field.getCellValue({k, i});
             switch (value1) {
                 case CellValue::Hidden:
                     std::cout << ' ' << static_cast<char>(value1) << ' ';
@@ -110,7 +110,7 @@ void ConsoleDisplayer::displayFields(Field field1, Field field2) {
 
         for (int k = 0; k < columns; k++) {
             std::cout << colors.white << "|";
-            CellValue value2 = field2.getCellValue({k, i});
+            CellValue value2 = enemyField.getCellValue({k, i});
             switch (value2) {
                 case CellValue::Hidden:
                     std::cout << ' ' << static_cast<char>(value2) << ' ';

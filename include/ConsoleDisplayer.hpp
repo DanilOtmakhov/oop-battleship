@@ -19,7 +19,7 @@ class ConsoleDisplayer {
 
     public:
         void displayField(Field field, bool isEnemy);
-        void displayFields(Field field, Field field2);
+        void displayFields(Field field, Field enemyField);
         void displayInputCoordinateToAttack();
         void displaySymbolsOfCells();
         void displayDoubleDamage();
