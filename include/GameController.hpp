@@ -51,7 +51,7 @@ class GameController {
             output.displayFields(game.getGameState().getPlayer().getField(), game.getGameState().getBot().getField());
             while (!gameEnded) {
                 handlePlayerTurn();
-                checkGameOver();h
+                checkGameOver();
                 if (gameEnded) break;
                 handleBotTurn();
                 checkGameOver();

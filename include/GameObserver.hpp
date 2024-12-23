@@ -23,7 +23,6 @@ class OutputObserver : public GameObserver {
 
         void abilityUsed() override {
             output.displayAbilityUsed();
-            output.displayFields(gameState.getPlayer().getField(), gameState.getBot().getField());
         }
 
         void roundCompleted() override {

@@ -249,7 +249,7 @@ void ConsoleDisplayer::displayGameStartInfo(const std::map<char, Command>& comma
 }
 
 void ConsoleDisplayer::displayAbilityUsed() {
-    std::cout << "You used the ability." << std::endl;
+    std::cout << "Using ability..." << std::endl;
 }
 
 void ConsoleDisplayer::displaySaveFinished() {
